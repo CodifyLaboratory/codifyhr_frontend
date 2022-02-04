@@ -1,0 +1,88 @@
+.header {
+    background-color: #F9FBFF;
+    padding: 15px 0;
+    align-items: center;
+}
+.header > div {
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    transition: all 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    grid-gap: 30px;
+}
+.burger {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+}
+.burgerLine {
+    width: 18px;
+    height: 2px;
+    background: #2D51A3;
+    border-radius: 10px;
+}
+.logoImg {
+    padding: 10px;
+    background: rgb(134, 133, 133);
+    border-radius: 10px;
+}
+
+.navList {
+    display: flex;
+    grid-gap: 40px;
+}
+.navItem {
+    list-style: none;
+    border-radius: 10px;
+    padding: 10px 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+.blackLink {
+    background: #2D51A3;
+    color: #fff;
+    text-transform: uppercase;
+}
+.blueLink {
+    border: 1px solid #2D51A3;
+    color: #2D51A3;
+}
+.userItem {
+    display: flex;
+    grid-gap: 20px;
+}
+.textLanguage {
+    font-size: 16px;
+    line-height: 19px;    
+    color: #2D51A3;
+}
+.textLanguage::after {
+    content: url(../../../assets/down.png);
+    width: 10px;
+    height: 5px;
+    margin-left: 5px;
+}
+.userText {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2D51A3;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

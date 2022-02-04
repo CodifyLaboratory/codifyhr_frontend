@@ -1,0 +1,70 @@
+.bgSearch {
+    background-image: url(../../../assets/searchMain2.png);
+    max-width: 1440px;
+    width: 100%;
+    height: 700px;
+    padding: 260px 0;
+    margin: 0 auto;
+}
+.bgSearch > div {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 60px;
+}
+
+.searchTitle {
+    display: flex;
+    justify-content: center;
+    text-align: center
+}
+.searchTitleText {
+    max-width: 900px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    color: #fff;
+}
+.searchBlock {
+    display: flex;
+    justify-content: center;
+    grid-gap: 10px;
+}
+.searchInput {
+    max-width: 655px;
+    width: 100%;
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 9px 12px;
+    grid-gap: 12px;
+}
+.searchInput > img {
+    width: 20px;
+    height: 20px;
+}
+.searchInput > input {
+    background: transparent;
+    color: #D6D6D6;
+    font-size: 18px;
+    line-height: 22px;
+    border: none;
+    outline: none;
+}
+
+.searchInput > input::placeholder {
+    color: #D6D6D6;
+}
+.searchBlock > button {
+    padding: 8px 67px;
+    background-color: #2D51A3;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

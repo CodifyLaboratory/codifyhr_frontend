@@ -1,0 +1,61 @@
+.resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 0 0 0;
+    grid-gap: 39px;
+}
+.resumeTitle {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+}
+.cards {
+    display: flex; 
+    justify-content: center;
+    grid-gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    height: 370px;
+    background: #F9FBFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    padding: 30px 26px;
+    grid-gap: 42px;
+}
+.cardImg {
+    width: 151px;
+    height: 152px;
+}
+.cardImg > img {
+    width: 100%;
+    height: 100%;
+}
+.cardTitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #292929;
+}
+
+.cardBtn {     
+    max-width: 264px;
+    width: 100%;
+    height: 48px;
+    background: #2D51A3;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+}
