@@ -7,13 +7,17 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { Resume } from './view/pages/resume/Resume';
 function App() {
   return (
     <Router>
       <div className="App">
         <Header/>
         <Switch>
-          <Route to="/">
+          <Route path="/resume">
+            <Resume/>
+          </Route>
+          <Route path="/">
             <Main/>
           </Route>
         </Switch>

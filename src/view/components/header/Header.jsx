@@ -1,5 +1,5 @@
 import css from "./header.module.css"
-import { NavLink} from "react-router-dom"
+import {Link} from "react-router-dom"
 import Logo from "../../../assets/logo.png"
 
 export const Header = () => {
@@ -13,17 +13,17 @@ export const Header = () => {
                         <div className={css.burgerLine}></div>
                         <div className={css.burgerLine}></div>
                     </div>
-                    <NavLink activeClassName={css.link} exact to="/">
+                    <Link className={css.link} to={"/"}>
                         <img src={Logo} alt="" />                   
-                    </NavLink>
+                    </Link>
                 </div>
                 <ul className={css.navList}>
-                    <NavLink className={css.link} exact to="/list">
+                    <Link className={css.link} to="/resume">
                         <li className={`${css.navItem} ${css.blackLink}`}>Спиcок резюме</li>
-                    </NavLink>
-                    <NavLink className={css.link} exact to="/get">
+                    </Link>
+                    <Link className={css.link} exact to="/get">
                         <li className={`${css.navItem} ${css.blueLink}`}>Получть консультацию</li>
-                    </NavLink>
+                    </Link>
                 </ul>
                 <div className={css.userItem}>
                     <p className={css.textLanguage}>RU</p>
