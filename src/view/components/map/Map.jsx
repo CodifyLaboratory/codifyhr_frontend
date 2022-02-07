@@ -23,7 +23,7 @@ class SimpleMap extends Component {
           <AnyReactComponent
             lat={42.877372280353924}
             lng={74.59194127670271}
-            text="My Marker"
+            image="../../../assets/aboutUsLeftImg.png"
           />
         </GoogleMapReact>
       </div>

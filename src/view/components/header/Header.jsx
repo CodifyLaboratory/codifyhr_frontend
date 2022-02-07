@@ -1,9 +1,13 @@
+import { useState } from "react"
 import css from "./header.module.css"
 import {Link} from "react-router-dom"
 import Logo from "../../../assets/logo.png"
-
+import { ModalAuth } from "../modalAuth/ModalAuth"
+import { ModalRegis } from "../modalRegis/ModalRegis"
+   
 export const Header = () => {
-    // const [modal, setModal] = useState()
+    const [modalAuthActive, setModalAuthActive] = useState(false)
+    const [modalRegisActive, setModalRegisActive] = useState(false)
     return (
         <div className={css.header}>
             <nav className="container">
@@ -27,10 +31,12 @@ export const Header = () => {
                 </ul>
                 <div className={css.userItem}>
                     <p className={css.textLanguage}>RU</p>
-                    <p className={css.userText}>Вход</p>
-                    <p className={css.userText}>Регистрация</p>
-                </div>
+                    <p className={css.userText} onClick={() => setModalAuthActive(true)}>Вход</p>
+                    <p className={css.userText} onClick={() => setModalRegisActive(true)}>Регистрация</p>
+                </div> 
             </nav>
+            <ModalAuth active={modalAuthActive} setActive={setModalAuthActive}/>
+            <ModalRegis active={modalRegisActive} setActive={setModalRegisActive}/>
         </div>
     )
 } 
