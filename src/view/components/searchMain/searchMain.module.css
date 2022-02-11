@@ -1,8 +1,8 @@
 .bgSearch {
     background-image: url(../../../assets/searchMain2.png);
+    background-repeat: no-repeat;
     max-width: 1440px;
     width: 100%;
-    height: 700px;
     padding: 260px 0;
     margin: 0 auto;
 }

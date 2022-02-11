@@ -22,9 +22,10 @@ button {
   cursor: pointer;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 54px;
 }
 .modal {
   background: rgba(0, 0, 0, 0.4);
@@ -44,4 +45,7 @@ button {
 .modal.active{
   opacity: 1;
   pointer-events: all;
+}
+@media screen and (max-width: 1024px) {
+    
 }

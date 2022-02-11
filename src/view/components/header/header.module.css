@@ -86,3 +86,6 @@ nav {
     align-items: center;
     cursor: pointer;
 }
+@media screen and (max-width: 769px) {
+    
+}
