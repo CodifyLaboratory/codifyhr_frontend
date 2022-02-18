@@ -25,7 +25,7 @@ export const Header = () => {
                         <button className={`${css.navItem} ${css.blackLink}`}>Спиcок резюме</button>
                     </Link>
                     <Link className={css.link} exact to="/get">
-                        <li className={`${css.navItem} ${css.blueLink}`}>Получть консультацию</li>
+                        <li className={`${css.navItem} ${css.blueLink}`}>Получить консультацию</li>
                     </Link>
                 </ul>
                 <div className={css.userItem}>
