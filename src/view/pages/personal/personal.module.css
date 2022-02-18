@@ -1,0 +1,63 @@
+.personal {
+    display: flex;
+    align-items: top;
+    grid-gap: 20px;
+}
+.company {
+    color: #7E7E7E;
+    margin-top: 6px;
+}
+.phone {
+    display: flex;
+    grid-gap: 12px;
+    margin-top: 26px;
+}
+.email{
+    display: flex;
+    grid-gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.resumes_list {
+    max-width: 738px;
+    width: 100%;
+    margin: 32px auto;
+}
+.number_of_resumes{
+    display: flex;
+    grid-gap: 8px;
+}
+.number_of_resumes p {
+    color: #707070;
+}
+.buttons{
+    display: flex;
+    grid-gap: 7px;
+    cursor: pointer;
+}
+.line {
+    border: 1px solid #474747;
+}
+.specialization{
+    display: flex;
+    grid-gap: 180px;
+    margin-top: 22px;
+    margin-left: 110px;
+    margin-bottom: 26px;
+}
+.specialization p {
+    line-height: 22px;
+    color: #292929;
+    font-weight: bold;
+}
+
+.more_btn{
+    outline: none;
+    border: none;
+    background:none;
+    display: flex;
+    grid-gap: 10px;
+    margin: 30px auto;
+    margin-bottom: -80px;
+}

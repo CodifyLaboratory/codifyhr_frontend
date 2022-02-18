@@ -17,6 +17,13 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 130%;
+  color: #292929;
+
 }
 button {
   cursor: pointer;
@@ -26,6 +33,13 @@ button {
   width: 100%;
   margin: 0 auto;
   padding: 0 54px;
+}
+.white_container{
+  background: #ffffff;
+  padding: 66px 54px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 .modal {
   background: rgba(0, 0, 0, 0.4);

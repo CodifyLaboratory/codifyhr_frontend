@@ -1,0 +1,37 @@
+.line {
+    border: 1px solid #D8D8D8;
+}
+.info{
+    display: flex;
+    align-items: center;
+    grid-gap: 26px;
+    margin-top: 10px;
+    position: relative;
+}
+.info button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 13.5px 41px;
+    background: #2D51A3;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 0;
+}
+.name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #292929;
+}
+.profession {
+    font-size: 16px;
+    line-height: 19px;
+    color: #302F2F;
+    position: absolute;
+    left: 336px;
+}

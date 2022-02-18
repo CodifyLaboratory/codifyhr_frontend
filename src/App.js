@@ -1,4 +1,5 @@
 import './index.css';
+import { Personal } from "./view/pages/personal/Personal"
 import { Header } from "./view/components/header/Header"
 import { Footer } from "./view/components/footer/Footer"
 import { Main } from "./view/pages/main/Main"
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route path="/resume">
             <Resume/>
+          </Route>
+          <Route path="/personal">
+            <Personal/>
           </Route>
           <Route path="/">
             <Main/>
