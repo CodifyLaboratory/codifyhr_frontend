@@ -20,6 +20,9 @@ code {
 }
 button {
   cursor: pointer;
+  transition: all 0.1s;
+  border: none;
+  outline: none;
 }
 .container {
   max-width: 1440px;
@@ -47,5 +50,12 @@ button {
   pointer-events: all;
 }
 @media screen and (max-width: 1024px) {
-    
+    .container {
+      padding: 0 20px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .container {
+      padding: 0 14px;
+    }
 }

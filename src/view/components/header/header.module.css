@@ -24,6 +24,10 @@ nav {
     align-items: center;
     grid-gap: 30px;
 }
+.logoIcon {
+    width: 214px;
+    height: 52px;
+}
 .burger {
     display: flex;
     flex-direction: column;
@@ -86,6 +90,55 @@ nav {
     align-items: center;
     cursor: pointer;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1024px) {
+    .logoIcon {
+        width: 166px;
+        height: 40px;
+    }
+    .userText {
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+    .navItem {      
+        padding: 9px 19px;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .logo {
+        grid-gap: 20px;
+    }
+    .logoIcon {
+        content: url(../../../assets/logo2.png);
+        width: 40px;
+        height: 40px;
+    }
     
+    .navList {
+        grid-gap: 20px;
+    }
+    .navItem {
+        padding: 7px 15px;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .header {
+        padding: 8px 0;
+    }
+    .navItem {
+        padding: 9px 13px;
+        font-size: 10px;
+        line-height: 11px;
+    }
+    .textLanguage {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .navList {
+        display: none;
+    }
 }

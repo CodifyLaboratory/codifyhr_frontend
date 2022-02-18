@@ -6,8 +6,10 @@ export const ResumeCard = (props) => {
             <div className={css.cardImg}>
                 <img src={props.image} alt="" />
             </div>
-            <p className={css.cardTitle}>{props.title}</p>
-            <button className={css.cardBtn}>список кандидатов</button>
+            <div className={css.cardAbout}>
+                <p className={css.cardTitle}>{props.title}</p>
+                <button className={css.cardBtn}>список кандидатов</button>
+            </div>
         </div>
     )
 }

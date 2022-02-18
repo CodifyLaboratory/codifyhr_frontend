@@ -5,8 +5,10 @@
     width: 100%;
     padding: 260px 0;
     margin: 0 auto;
+    background-size: cover;
 }
-.bgSearch > div {
+
+.bgSearch>div {
     display: flex;
     flex-direction: column;
     grid-gap: 60px;
@@ -17,6 +19,7 @@
     justify-content: center;
     text-align: center
 }
+
 .searchTitleText {
     max-width: 900px;
     width: 100%;
@@ -25,11 +28,13 @@
     line-height: 60px;
     color: #fff;
 }
+
 .searchBlock {
     display: flex;
     justify-content: center;
     grid-gap: 10px;
 }
+
 .searchInput {
     max-width: 655px;
     width: 100%;
@@ -40,11 +45,13 @@
     padding: 9px 12px;
     grid-gap: 12px;
 }
-.searchInput > img {
+
+.searchInput>img {
     width: 20px;
     height: 20px;
 }
-.searchInput > input {
+
+.searchInput>input {
     background: transparent;
     color: #D6D6D6;
     font-size: 18px;
@@ -53,10 +60,11 @@
     outline: none;
 }
 
-.searchInput > input::placeholder {
+.searchInput>input::placeholder {
     color: #D6D6D6;
 }
-.searchBlock > button {
+
+.searchBlock>button {
     padding: 8px 67px;
     background-color: #2D51A3;
     text-transform: uppercase;
@@ -65,6 +73,85 @@
     font-size: 16px;
     line-height: 24px;
     color: #fff;
-    border: none;
-    cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    .bgSearch {
+        padding: 150px 70px;
+    }
+
+    .searchTitleText {
+        font-size: 38px;
+        line-height: 50px;
+    }
+
+    .searchBlock>button {
+        padding: 6px 45px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px){
+    .bgSearch {
+        padding: 120px 60px;
+    }
+
+    .searchTitleText {
+        font-size: 34px;
+        line-height: 40px;
+    }
+    .searchInput  {
+        padding: 7px 10px;
+        grid-gap: 8px;
+    } 
+    .searchInput>img {
+        width: 16px;
+        height: 16px;
+    }
+    .searchInput>input {
+        font-size: 16px;
+    }
+    .searchBlock>button {
+        padding: 6px 35px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .bgSearch {
+        background-image: url(../../../assets/phoneBg.png);
+        padding: 164px 10px;
+        max-width: 540px;
+        width: 100%;
+        min-height: 630px;
+    }
+
+    .searchTitleText {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .searchInput>img {
+        display: none;
+    }
+
+    .searchInput {
+        padding: 6px;
+    }
+
+    .searchInput>input {
+        max-width: 290px;
+        width: 100%;
+        border-radius: 3px;
+        padding: 0;
+        grid-gap: 12px;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .searchBlock>button {
+        padding: 13px 24px;
+        font-size: 11px;
+        line-height: 12px;
+        border-radius: 5px;
+    }
 }
