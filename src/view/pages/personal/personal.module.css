@@ -3,6 +3,9 @@
     align-items: top;
     grid-gap: 20px;
 }
+.personalContainer{
+  padding: 66px 54px;
+}
 .company {
     color: #7E7E7E;
     margin-top: 6px;

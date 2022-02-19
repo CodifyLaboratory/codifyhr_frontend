@@ -37,13 +37,12 @@ button {
   margin: 0 auto;
   padding: 0 54px;
 }
-.white_container{
+/* .white_container{
   background: #ffffff;
-  padding: 66px 54px;
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-}
+} */
 .modal {
   background: rgba(0, 0, 0, 0.4);
   width: 100vw;
@@ -64,7 +63,6 @@ button {
   pointer-events: all;
 }
 @media screen and (max-width: 1024px) {
-<<<<<<< HEAD
     .container {
       padding: 0 20px;
     }
@@ -74,7 +72,3 @@ button {
       padding: 0 14px;
     }
 }
-=======
-    
-}
->>>>>>> 2868a2beeda01b5948f6f9c9b0edd5fe025932fa
