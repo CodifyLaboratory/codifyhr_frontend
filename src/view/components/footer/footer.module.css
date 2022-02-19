@@ -1,12 +1,12 @@
 .footer {
     background-color: rgba(231, 231, 231, 0.2);
     margin-top: 66px;
-    padding-top: 35px;
 }
 .footerLinks {
     display: flex;
-    align-items: center;
     grid-gap: 38px;
+    padding: 35px 0;
+    flex-wrap: wrap;
 }
 .logoBloc {
     display: flex;
@@ -16,7 +16,7 @@
 .contacts {
     display: flex;
     flex-direction: column;
-    grid-gap: 13px;
+    grid-gap: 10px;
 }
 .contactNumber {
     font-weight: normal;
@@ -40,6 +40,11 @@
     max-width: 180px;
     width: 100%;
     margin-bottom: 20px;
+}
+.mapBlock {
+    max-width: 320px;
+    width: 100%;
+    height: 200px;
 }
 .links {
     display: flex;
@@ -68,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 5px 54px;
     background-color: #F9FBFF;
 }
 .leftText, .rightText {
@@ -101,4 +106,34 @@
     
     width: 20px;
     height: 20px;
+}
+@media screen and (max-width: 768px) {
+    .link, .contactNumber{
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .linkIcon {
+        display: none;
+    }
+    .footerCopyRight {
+        padding: 8px 15px;
+    }
+
+}
+/* map  size*/
+@media screen and (max-width: 610px) {
+    .mapBlock {
+        margin-bottom: 45px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .leftText {
+        grid-gap: 14px;
+    }
+    .copyRightText {
+        font-size: 13px;
+    }
+    .footerLanguage {
+        font-size: 13px;
+    }
 }

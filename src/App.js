@@ -9,12 +9,16 @@ import {
   Route
 } from "react-router-dom";
 import { Resume } from './view/pages/resume/Resume';
+import { UserResume } from './view/pages/userResume/UserResume';
 function App() {
   return (
     <Router>
       <div className="App">
         <Header/>
         <Switch>
+          <Route path="/userResume">
+            <UserResume/>
+          </Route>
           <Route path="/resume">
             <Resume/>
           </Route>

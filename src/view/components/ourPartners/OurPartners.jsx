@@ -5,7 +5,7 @@ import  partnerLogo from "../../../assets/partnerLogo.png"
 export const OurPartners = () => {
     return (
         <div className="container">
-            <p className={css.title}>Наши партнеры</p>
+            <p className={css.title}>Компании, в которых работают наши студенты</p>
                 <div className={css.cards}>
                     <div className={css.cardsItem}>
                         <OurPartnersCard img={partnerLogo} text="Следует отметить, что дальнейшее развитие" />
@@ -14,6 +14,7 @@ export const OurPartners = () => {
                     </div>
                     <div className={css.arrowIcon}>
                         <img src={Arrow} alt="" />
+                        
                     </div>
                 </div>
         </div>

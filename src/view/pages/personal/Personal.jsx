@@ -10,7 +10,7 @@ import { Candidat } from "../../components/candidat/Candidat"
 
 export const Personal = () => {
     return (
-        <div className="white_container">
+        <div className={` ${css.personalContainer} "container"`}>
             <div className={css.personal}>
                 <div className={css.ava}><img src={Ava} alt="" /></div>
                 <div className={css.info}>

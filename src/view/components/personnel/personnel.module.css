@@ -1,5 +1,5 @@
 .personnel {
-    padding: 100px 0;
+    margin-top: 100px;
 }
 .personnel > div {
     display: flex;
@@ -20,6 +20,7 @@
     display: flex;
     justify-content: center;
     grid-gap: 59px;
+    flex-wrap: wrap;
 }
 .personnelSection > div {
     display: flex;
@@ -45,4 +46,35 @@
     font-size: 20px;
     line-height: 24px;
     color: #292929;
+}
+@media screen and (max-width: 540px) { 
+    .personnel {
+        margin-top: 35px;
+    }
+    .personnelTitle {      
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .personnelSection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .personnelBlock {
+        max-width: 120px;
+        width: 100%;   
+    }
+    .personnelNum {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .personnelLine {
+        max-width: 191px;
+        width: 100%;
+        margin: 20px 0 10px 0;
+    }
+    .personnelText {         
+        font-size: 15px;
+        line-height: 24px;
+    }
 }

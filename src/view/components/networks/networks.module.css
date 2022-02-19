@@ -1,0 +1,12 @@
+.networks {
+    display: flex;
+}
+.networksIcon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+.networksIcon > img {
+    width: 100%;
+    cursor: pointer;
+}

@@ -1,0 +1,68 @@
+.infoUser {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.mainInfo {
+  display: flex;
+}
+.profilePhoto > img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  margin-right: 45px;
+}
+.mainInfoTitle {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  color: #292929;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+.infoBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 110px;
+}
+.infoBtn > button {
+  padding: 25px 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  background-color: #2d51a3;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.infoBtn > button::before {
+  content: url(../../../assets/pdfIcon.png);
+  margin-right: 10px;
+}
+/* info.jsx */
+
+.infoDes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.infoTitle {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  color: #292929;
+  margin-right: 50px;
+}
+.infoTextDes {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  color: #4a4747;
+}
