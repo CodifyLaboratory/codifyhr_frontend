@@ -1,4 +1,4 @@
-import css from "./resume.module.css"
+// import css from "./resume.module.css"
 
 export const Resume = () => {
     return (
