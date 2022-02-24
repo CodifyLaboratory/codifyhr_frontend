@@ -26,6 +26,18 @@
   justify-content: center;
   margin-top: 110px;
 }
+
+.saveItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.saveImg {
+  width: 18px;
+  height: 20px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
 .infoBtn > button {
   padding: 25px 30px;
   font-weight: 500;
@@ -40,10 +52,13 @@
   display: flex;
   align-items: center;
 }
-.infoBtn > button::before {
+.infoBtn > button::after {
   content: url(../../../assets/pdfIcon.png);
-  margin-right: 10px;
+  width: 24px;
+  height: 28px;
+  margin-left: 10px;
 }
+/* __________________________________________ */
 /* info.jsx */
 
 .infoDes {
@@ -65,4 +80,50 @@
   line-height: 19px;
   letter-spacing: 0.01em;
   color: #4a4747;
+}
+
+@media screen and (max-width: 992px) {
+  .infoUser {
+    flex-direction: column;
+  }
+  .mainDes {
+    max-width: 375px;
+    width: 100%;
+  }
+  .infoTextDes {
+    font-size: 15px;
+  }
+  .mainDes_down{
+    margin-left: 120px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .profilePhoto > img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  .mainInfo {
+    flex-direction: column;
+  }
+  .mainInfoTitle {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .infoTitle{
+    font-size: 13px;
+    line-height: 13px;
+  }
+  .infoTextDes {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .mainDes_down{
+    margin-left: 0;
+  }
+  .infoBtn > button {
+    padding: 9px 15px;
+    font-size: 11px;
+    line-height: 16px;
+  }
 }
