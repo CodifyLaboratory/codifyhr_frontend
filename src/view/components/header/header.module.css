@@ -1,145 +1,149 @@
 .header {
-    background-color: #F9FBFF;
-    padding: 15px 0;
-    align-items: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: #f9fbff;
+  padding: 15px 0;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .header > div {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .link {
-    transition: all 0.3s;
-    color: black;
-    text-decoration: none;
+  transition: all 0.3s;
+  color: black;
+  text-decoration: none;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo {
-    display: flex;
-    align-items: center;
-    grid-gap: 30px;
+  display: flex;
+  align-items: center;
+  grid-gap: 30px;
 }
 .logoIcon {
-    width: 214px;
-    height: 52px;
+  width: 214px;
+  height: 52px;
 }
 .burger {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 5px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 5px;
+  display: none;
 }
 .burgerLine {
-    width: 18px;
-    height: 2px;
-    background: #2D51A3;
-    border-radius: 10px;
+  width: 18px;
+  height: 2px;
+  background: #2d51a3;
+  border-radius: 10px;
 }
 .logoImg {
-    padding: 10px;
-    background: rgb(134, 133, 133);
-    border-radius: 10px;
+  padding: 10px;
+  background: rgb(134, 133, 133);
+  border-radius: 10px;
 }
 
 .navList {
-    display: flex;
-    grid-gap: 40px;
+  display: flex;
+  grid-gap: 40px;
 }
 .navItem {
-    list-style: none;
-    border-radius: 10px;
-    padding: 10px 40px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
+  list-style: none;
+  border-radius: 10px;
+  padding: 10px 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
 }
 .blackLink {
-    background: #2D51A3;
-    color: #fff;
-    text-transform: uppercase;
+  background: #2d51a3;
+  color: #fff;
+  text-transform: uppercase;
 }
 .blueLink {
-    border: 1px solid #2D51A3;
-    color: #2D51A3;
+  border: 1px solid #2d51a3;
+  color: #2d51a3;
 }
 .userItem {
-    display: flex;
-    grid-gap: 20px;
+  display: flex;
+  grid-gap: 20px;
 }
 .textLanguage {
-    font-size: 16px;
-    line-height: 19px;    
-    color: #2D51A3;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2d51a3;
 }
 .textLanguage::after {
-    content: url(../../../assets/down.png);
-    width: 10px;
-    height: 5px;
-    margin-left: 5px;
+  content: url(../../../assets/down.png);
+  width: 10px;
+  height: 5px;
+  margin-left: 5px;
 }
 .userText {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    color: #2D51A3;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2d51a3;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
-    .logoIcon {
-        width: 166px;
-        height: 40px;
-    }
-    .userText {
-        display: none;
-    }
+  .logoIcon {
+    width: 166px;
+    height: 40px;
+  }
+  .userText {
+    display: none;
+  }
 }
 @media screen and (max-width: 992px) {
-    .navItem {      
-        padding: 9px 19px;
-        font-size: 15px;
-    }
+  .navItem {
+    padding: 9px 19px;
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 768px) {
-    .logo {
-        grid-gap: 20px;
-    }
-    .logoIcon {
-        content: url(../../../assets/logo2.png);
-        width: 40px;
-        height: 40px;
-    }
-    
-    .navList {
-        grid-gap: 20px;
-    }
-    .navItem {
-        padding: 7px 15px;
-        font-size: 13px;
-    }
+  .logo {
+    grid-gap: 20px;
+  }
+  .logoIcon {
+    content: url(../../../assets/logo2.png);
+    width: 40px;
+    height: 40px;
+  }
+
+  .navList {
+    grid-gap: 20px;
+  }
+  .navItem {
+    padding: 7px 15px;
+    font-size: 13px;
+  }
 }
 @media screen and (max-width: 540px) {
-    .header {
-        padding: 8px 0;
-    }
-    .navItem {
-        padding: 9px 13px;
-        font-size: 10px;
-        line-height: 11px;
-    }
-    .textLanguage {
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 15px;
-    }
+  .header {
+    padding: 8px 0;
+  }
+  .burger {
+    display: flex;
+  }
+  .navItem {
+    padding: 9px 13px;
+    font-size: 10px;
+    line-height: 11px;
+  }
+  .textLanguage {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+  }
 
-    .navList {
-        display: none;
-    }
+  .navList {
+    display: none;
+  }
 }

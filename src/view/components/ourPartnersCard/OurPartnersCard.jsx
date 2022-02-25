@@ -7,7 +7,6 @@ export const OurPartnersCard = (props) => {
                 <img src={props.img} alt="" />
             </div>
             <p className={css.text}>{props.text}</p>
-            <button className={css.btn}>ПОДРОБНЕЕ</button>
         </div>
     )
 }

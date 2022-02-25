@@ -21,22 +21,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-gap: 28px;
+    grid-gap: 20px;
     background: #F9FBFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    padding: 23px 18px;
-    max-width: 320px;
+    padding: 20px 10px;
+    max-width: 270px;
 }
 .cardImg {
-    width: 241px;
+    width: 200px;
 }
 .cardImg > img {
     width: 100%;
 }
 .text {
     font-weight: normal;
-    font-size: 20px;
-    line-height: 26px; 
+    font-size: 16px;
+    line-height: 20px; 
     color: #292929;
     text-align: center;
 }
@@ -75,7 +75,6 @@
     }
     .card {
         width: 210px;
-        height: 250px;
         grid-gap: 16px;
     }
     .cardImg {
@@ -92,6 +91,10 @@
 }
 
 @media screen and (max-width: 540px) {
+    .title {
+        font-size: 26px;
+        line-height: 30px;
+    }
     .cards {
         flex-direction: column;
     }

@@ -23,8 +23,8 @@ code {
   font-size: 18px;
   line-height: 130%;
   color: #292929;
-
 }
+
 button {
   cursor: pointer;
   transition: all 0.1s;
@@ -43,6 +43,12 @@ button {
   width: 100%;
   margin: 0 auto;
 } */
+.error {
+  text-align: center;
+  font-size: 40px;
+  padding: 40px;
+  color:#2D51A3;
+}
 .modal {
   background: rgba(0, 0, 0, 0.4);
   width: 100vw;
