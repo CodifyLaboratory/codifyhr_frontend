@@ -1,0 +1,35 @@
+.select {
+  margin-top: 40px;
+  border-bottom: 2px solid #d8d8d8;
+}
+.selectDes {
+    margin-top: 40px;
+    display: flex;
+}
+
+/* select.jsx */
+.selectItem {
+  display: flex;
+  align-items: center;
+  grid-gap: 20px;
+  margin-bottom: 30px;
+}
+.selectBlock {
+  padding: 8px 10px;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #2d51a3;
+  background: transparent;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+  transition: all 0.3s ease;
+}
+.selectBlock option {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+  background: #fff;
+}

@@ -28,6 +28,10 @@ function App() {
           <Route path="/">
             <Main/>
           </Route>
+        
+          <Route path="*">
+            <p className='error'>404 error! Тако страницы нет!</p>
+          </Route>
         </Switch>
         <Footer/>
       </div>

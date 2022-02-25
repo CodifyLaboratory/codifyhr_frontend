@@ -34,8 +34,8 @@ export const Header = () => {
                     <p className={css.userText} onClick={() => setModalRegisActive(true)}>Регистрация</p> */}
                 </div>
             </nav>
-            {/* <ModalAuth active={modalAuthActive} setActive={setModalAuthActive} />
-            <ModalRegis active={modalRegisActive} setActive={setModalRegisActive} /> */}
+            <ModalAuth active={modalAuthActive} setActive={setModalAuthActive} />
+            <ModalRegis active={modalRegisActive} setActive={setModalRegisActive} />
         </div>
     )
 } 
