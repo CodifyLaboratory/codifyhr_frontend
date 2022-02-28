@@ -9,7 +9,10 @@ export const Candidat = () => {
                 <div><img src={Ava} alt="" /></div>
                 <p className={css.name}>Евгений Нестеров </p>
                 <p className={css.profession}>Project Management</p>
-                <button>подробнее</button>
+                <button className={css.more}>подробнее</button>
+                <button className={css.download}>СКАЧАТЬ РЕЗЮМЕ</button>
+                <button className={css.download_hidden}>СКАЧАТЬ</button>
+
             </div>
         </div>
     )

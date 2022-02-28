@@ -23,13 +23,11 @@
 }
 
 .resumes_list {
-    max-width: 738px;
-    width: 100%;
-    margin: 32px auto;
+    margin-top: 30px;
 }
 .number_of_resumes{
     display: flex;
-    grid-gap: 8px;
+    grid-gap: 40px
 }
 .number_of_resumes p {
     color: #707070;
@@ -40,19 +38,21 @@
     cursor: pointer;
 }
 .line {
-    border: 1px solid #474747;
+    border: 1px solid #707070;
 }
 .specialization{
     display: flex;
-    grid-gap: 180px;
+    grid-gap: 266px;
     margin-top: 22px;
-    margin-left: 110px;
+    margin-left: 140px;
     margin-bottom: 26px;
 }
 .specialization p {
     line-height: 22px;
     color: #292929;
     font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 .more_btn{
@@ -63,4 +63,34 @@
     grid-gap: 10px;
     margin: 30px auto;
     margin-bottom: -80px;
+}
+
+@media (min-width: 1024px) and (max-width: 1220px) {
+   .specialization{
+       grid-gap: 196px;
+   }
+}
+
+@media (min-width: 200px) and (max-width: 1023px) {
+    .info p, .phone, .email {
+        font-size: 15px;
+        line-height: 130%;
+        grid-gap: 5px;
+    }
+    .personalContainer{
+        padding: 30px 15px;
+    }
+    .number_of_resumes p {
+        font-size: 10px;
+        line-height: 130%;
+    }
+    .number_of_resumes{
+        grid-gap: 10px;
+    }
+    .buttons>p>img{
+        width: 13px;
+    }
+    .specialization, .line{
+        display: none;
+    }
 }

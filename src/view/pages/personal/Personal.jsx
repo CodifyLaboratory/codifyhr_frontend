@@ -4,7 +4,7 @@ import Phone from "../../../assets/phone_personal.svg"
 import Email from "../../../assets/email_personal.svg"
 import Left from "../../../assets/left_arrow_personal.svg"
 import Right from "../../../assets/right_arrow_personal.svg"
-import Down from "../../../assets/down_arrow_personal.svg"
+// import Down from "../../../assets/down_arrow_personal.svg"
 import { Candidat } from "../../components/candidat/Candidat"
 
 
@@ -14,7 +14,7 @@ export const Personal = () => {
             <div className={css.personal}>
                 <div className={css.ava}><img src={Ava} alt="" /></div>
                 <div className={css.info}>
-                    <p className={css.name}>Абайдулаева Айдай Орозалиева</p>
+                    <p >Абайдулаева Айдай Орозалиева</p>
                     <p className={css.company}>Название компании</p>
                     <div className={css.phone}>
                         <img src={Phone} alt="" />
@@ -48,7 +48,7 @@ export const Personal = () => {
                     <Candidat />
                     <Candidat />
                 </div>
-                <button className={css.more_btn}>Смотреть еще <p><img src={Down} alt="" /></p></button>
+                {/* <button className={css.more_btn}>Смотреть еще <p><img src={Down} alt="" /></p></button> */}
             </div>
         </div>
     )
