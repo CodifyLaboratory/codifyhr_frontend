@@ -1,47 +1,96 @@
-
 .content {
-    padding: 20px;
-    border-radius: 12px;
-    background-color: #fff;
-    padding: 32px 46px;
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 20px;
+  max-width: 500px !important;
+  width: 100% !important;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 32px 46px;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 20px;
 }
 .contentH1 {
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 42px;
-    text-align: center;
-    color: #000000;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #000000;
 }
 .line {
-    border: 1px solid #424242;
-    max-width: 461px;
-    width: 100%;
+  border: 1px solid #424242;
+  max-width: 461px;
+  width: 100%;
 }
 .input {
-    border: 1px solid #000000;
-    border-radius: 9px;
-    background: #fff;
-    padding: 20px 17px;
-    width: 100%;
-    font-size: 16px;
-    line-height: 20px;  
-    outline: none;
+  border: 1px solid #000000;
+  border-radius: 9px;
+  background: #fff;
+  padding: 20px 17px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
 }
-.content > button {
+.forgotLink {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-decoration-line: underline;
+  color: #292929;
+  cursor: pointer;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+}
+.form > button {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  border: none;
+  background: #2d51a3;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+}
+.errorText {
+  color: #ff0000;
+}
+@media screen and (max-width: 768px) {
+  .content {
+    max-width: 400px !important;
+    border-radius: 12px;
+    background-color: #fff;
+    padding: 28px 40px;
+    width: 30vw;
+    display: flex;
+    grid-gap: 16px;
+  }
+  .input {
+    padding: 12px 14px;
     width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    border: none;
-    background: #2D51A3;
-    border-radius: 9px;    
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .contentH1 {
+    font-size: 30px;
+  }
+
+  .forgotLink {
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  .form > button {
+    padding: 14px 0;
+    font-size: 16px;
+  }
 }

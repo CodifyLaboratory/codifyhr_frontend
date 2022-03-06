@@ -59,6 +59,7 @@ nav {
   font-size: 16px;
   line-height: 19px;
 }
+
 .blackLink {
   background: #2d51a3;
   color: #fff;
@@ -91,6 +92,7 @@ nav {
   display: flex;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
 }
 @media screen and (max-width: 1024px) {
   .logoIcon {
