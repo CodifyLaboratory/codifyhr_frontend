@@ -6,23 +6,33 @@ import Left from "../../../assets/left_arrow_personal.svg"
 import Right from "../../../assets/right_arrow_personal.svg"
 // import Down from "../../../assets/down_arrow_personal.svg"
 import { Candidat } from "../../components/candidat/Candidat"
+import API from "../../../api/API";
+import { useEffect, useState } from "react"
 
 
 export const Personal = () => {
+    const [profile, setProfile] = useState([])
+  useEffect(() => {
+    API.getProfile()
+    .then((res) => {
+      setProfile(res.data)
+    })
+  })
+
     return (
         <div className={` ${css.personalContainer} "container"`}>
             <div className={css.personal}>
                 <div className={css.ava}><img src={Ava} alt="" /></div>
                 <div className={css.info}>
-                    <p >Абайдулаева Айдай Орозалиева</p>
-                    <p className={css.company}>Название компании</p>
+                    <p >{profile.name}</p>
+                    <p className={css.company}>{profile.company}</p>
                     <div className={css.phone}>
                         <img src={Phone} alt="" />
-                        <p>+996 123-13-12</p>
+                        <p>{profile.phone}</p>
                     </div>
                     <div className={css.email}>
                         <img src={Email} alt="" />
-                        <p>abdulaeva@gmail.com</p>
+                        <p>{profile.email}</p>
                     </div>
                 </div>
             </div>

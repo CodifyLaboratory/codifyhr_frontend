@@ -23,4 +23,5 @@ export default {
     getPartners: (data) => API.get("main/", data),
     createUser: (data) => API.post("login/", data),
     getResumes: () => API.get("resumes/"),
+    getProfile: (data) => API.get("personal/", data)
 }
