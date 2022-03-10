@@ -64,6 +64,10 @@
     color: #fff;
     padding: 15px 20px;
 }
+.cardBtn:hover {
+    background-color: #3c65c5;
+    transition: all .2s ease;
+}
 @media screen and (max-width: 768px) { 
     .card {
         width: 220px;

@@ -48,6 +48,10 @@
     color: #FFFFFF;
     border: none;
 }
+.btn:hover {
+    background-color: #3c65c5;
+    transition: all .2s ease;
+}
 
 .leftImg>img,
 .rightImg>img {

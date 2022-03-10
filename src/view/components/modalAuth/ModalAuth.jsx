@@ -48,6 +48,7 @@ export const ModalAuth = (props) => {
       localStorage.setItem("user", JSON.stringify(data))
       props.authUser(data.data)
       if (data.status === 200) {
+        props.setModal(false)
         history.push("/personal/")
       }
     })

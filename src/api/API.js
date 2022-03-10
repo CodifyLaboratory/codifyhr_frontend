@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const API = axios.create({
-    baseURL: "http://143.244.151.100/"
+    baseURL: "http://127.0.0.1:8000/"
 })
 
 const getToken = () => {
@@ -23,4 +23,5 @@ export default {
     getPartners: (data) => API.get("main/", data),
     createUser: (data) => API.post("login/", data),
     getResumes: () => API.get("resumes/"),
+    getResume: (id) => API.get("resumes/" + id),
 }

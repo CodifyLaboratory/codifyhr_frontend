@@ -34,6 +34,7 @@ nav {
   flex-direction: column;
   grid-gap: 5px;
   display: none;
+  cursor: pointer;
 }
 .burgerLine {
   width: 18px;
@@ -64,7 +65,12 @@ nav {
   background: #2d51a3;
   color: #fff;
   text-transform: uppercase;
+  transition: all .2s ease;
 }
+.blackLink:hover {
+  background-color: #3c65c5;
+}
+
 .blueLink {
   border: 1px solid #2d51a3;
   color: #2d51a3;
@@ -94,6 +100,42 @@ nav {
   cursor: pointer;
   text-decoration: none;
 }
+
+/* burger */
+
+.burgerContent {
+  position: fixed;
+  top: 0;
+  left: -10000%;
+  background-color: #2d51a3;
+  backdrop-filter: blur(8px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.burgerOpen {
+  overflow: hidden;
+  transition: 0.3s ease left;
+  left: 0;
+}
+.close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 20px;
+  top: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.close > img {
+  width: 100%;
+  height: 100%;
+}
+/* ******************************************* */
 @media screen and (max-width: 1024px) {
   .logoIcon {
     width: 166px;
@@ -147,5 +189,31 @@ nav {
 
   .navList {
     display: none;
+  }
+  .logoIconSize {
+    content: url(../../../assets/logoWhite.png);
+    width: 214px;
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 6px;
+  }
+  .burgerLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .burgerLink {
+    display: flex;
+    font-size: 24px;
+    line-height: 30px;
+    color: #fff;
+    padding: 0;
+  }
+  .burgerLink:hover {
+    text-decoration: underline;
+    background-color: transparent;
   }
 }
