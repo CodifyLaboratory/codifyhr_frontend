@@ -1,12 +1,24 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import css from "./userResume.module.css";
 import { Info } from "../../components/info/Info";
+import API from "../../../api/API";
 import PhotoUser from "../../../assets/ava_personal.jpg";
 import Saved from "../../../assets/saved.png";
 import Save from "../../../assets/save.png";
 
 export const UserResume = () => {
   const [select, setSelect] = useState()
+  const [resume, setResume] = useState(null)
+
+  useEffect(() => {
+    const id = JSON.parse(localStorage.getItem("user"))?.user__id
+    API.getResume(id)
+    .then((res) => {
+      setResume(res.data)
+      console.log(res.data);
+    })
+  }, [])
+  console.log(resume);
   return (
     <div className="container">
       <div className={css.infoUser}>
@@ -20,8 +32,8 @@ export const UserResume = () => {
               {!select && <img className={css.saveImg} src={Save} alt="selecet" onClick={() => setSelect(!select)}/>}
               {select && <img className={css.saveImg} src={Saved} alt="seleceted" onClick={() => setSelect(!select)}/>}
             </div>
-            <Info titleText="Имя" infoText="Анна" />
-            <Info titleText="Фамилия" infoText="Борисовна" />
+            <Info titleText="Имя" infoText={""} />
+            <Info titleText="Фамилия" data={""} />
             <Info titleText="Специализация" infoText="Full-stack Development" />
             <Info titleText="Опыт работы" infoText="100+ лет" />
           </div>

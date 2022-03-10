@@ -1,96 +1,104 @@
 .personal {
-    display: flex;
-    align-items: top;
-    grid-gap: 20px;
+  display: flex;
+  align-items: top;
+  grid-gap: 20px;
+  padding: 66px 0;
 }
-.personalContainer{
-  padding: 66px 54px;
+.ava {
+  width: 60px;
+  height: 60px;
+}
+.ava > img {
+  width: 100%;
 }
 .company {
-    color: #7E7E7E;
-    margin-top: 6px;
+  color: #7e7e7e;
+  margin-top: 6px;
 }
 .phone {
-    display: flex;
-    grid-gap: 12px;
-    margin-top: 26px;
+  display: flex;
+  grid-gap: 12px;
+  margin-top: 26px;
 }
-.email{
-    display: flex;
-    grid-gap: 12px;
-    margin-top: 16px;
-    margin-bottom: 32px;
+.email {
+  display: flex;
+  grid-gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 32px;
 }
 
 .resumes_list {
-    margin-top: 30px;
+  margin-top: 30px;
 }
-.number_of_resumes{
-    display: flex;
-    grid-gap: 40px
+.number_of_resumes {
+  display: flex;
+  grid-gap: 40px;
 }
 .number_of_resumes p {
-    color: #707070;
+  color: #707070;
 }
-.buttons{
-    display: flex;
-    grid-gap: 7px;
-    cursor: pointer;
+.buttons {
+  display: flex;
+  grid-gap: 7px;
+  cursor: pointer;
 }
 .line {
-    border: 1px solid #707070;
+  border: 1px solid #707070;
 }
-.specialization{
-    display: flex;
-    grid-gap: 266px;
-    margin-top: 22px;
-    margin-left: 140px;
-    margin-bottom: 26px;
+.specialization {
+  display: flex;
+  grid-gap: 266px;
+  margin-top: 22px;
+  margin-left: 140px;
+  margin-bottom: 26px;
 }
 .specialization p {
-    line-height: 22px;
-    color: #292929;
-    font-weight: bold;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+  line-height: 22px;
+  color: #292929;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-.more_btn{
-    outline: none;
-    border: none;
-    background:none;
-    display: flex;
-    grid-gap: 10px;
-    margin: 30px auto;
-    margin-bottom: -80px;
+.more_btn {
+  outline: none;
+  border: none;
+  background: none;
+  display: flex;
+  grid-gap: 10px;
+  margin: 30px auto;
+  margin-bottom: -80px;
 }
 
 @media (min-width: 1024px) and (max-width: 1220px) {
-   .specialization{
-       grid-gap: 196px;
-   }
+  .specialization {
+    grid-gap: 196px;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 1023px) {
-    .info p, .phone, .email {
-        font-size: 15px;
-        line-height: 130%;
-        grid-gap: 5px;
-    }
-    .personalContainer{
-        padding: 30px 15px;
-    }
-    .number_of_resumes p {
-        font-size: 10px;
-        line-height: 130%;
-    }
-    .number_of_resumes{
-        grid-gap: 10px;
-    }
-    .buttons>p>img{
-        width: 13px;
-    }
-    .specialization, .line{
-        display: none;
-    }
+  .info p,
+  .phone,
+  .email {
+    font-size: 15px;
+    line-height: 130%;
+    grid-gap: 5px;
+  }
+  .personalContainer {
+    padding: 30px 15px;
+  }
+  .number_of_resumes p {
+    font-size: 10px;
+    line-height: 130%;
+  }
+  .number_of_resumes {
+    grid-gap: 10px;
+  }
+  .buttons > p > img {
+    width: 13px;
+  }
+  .specialization,
+  .line {
+    display: none;
+  }
 }

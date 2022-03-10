@@ -49,6 +49,10 @@ button {
   padding: 40px;
   color:#2D51A3;
 }
+
+.navLink {
+  text-decoration: none;
+}
 .modal {
   background: rgba(0, 0, 0, 0.4);
   width: 100vw;

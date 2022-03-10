@@ -6,7 +6,7 @@ export const OurPartnersCard = (props) => {
     <Link to={`/partner/${props.item.link}`}>
       <div className={css.card}>
         <div className={css.cardImg}>
-          <img src={props.item.image} alt="" />
+          <img src={props.item.image} alt="img" />
         </div>
         <p key={props.item.id} className={css.text}>{props.item.title}</p>
       </div>

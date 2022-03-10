@@ -19,10 +19,7 @@ export const OurPartners = () => {
                         {
                             partners.map((item) => <OurPartnersCard item={item}/>)
                         }
-                        {/* <OurPartnersCard img={partnerLogo} text="Следует отметить, что дальнейшее развитие" /> */}
-                        {/* <OurPartnersCard img={partnerLogo} text="Следует отметить, что дальнейшее развитие" />
-                        <OurPartnersCard img={partnerLogo} text="Следует отметить, что дальнейшее развитие" /> */}
-                    </div>
+                        </div>
                     <div className={css.arrowIcon}>
                         <img src={Arrow} alt="" />
                         
