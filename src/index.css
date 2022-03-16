@@ -23,6 +23,7 @@ code {
   font-size: 18px;
   line-height: 130%;
   color: #292929;
+  text-decoration: none;
 }
 
 button {
@@ -66,6 +67,7 @@ button {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
+  z-index: 12;
 }
 .modal.active{
   opacity: 1;

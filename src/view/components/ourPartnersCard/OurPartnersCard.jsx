@@ -1,15 +1,22 @@
-import { Link } from "react-router-dom";
+import img from "../../../assets/FrontImg.png";
 import css from "../ourPartners/ourPartners.module.css";
 
 export const OurPartnersCard = (props) => {
   return (
-    <Link to={`/partner/${props.item.link}`}>
+    <a href={props.item.link} target="_blank" rel="noreferrer">
       <div className={css.card}>
         <div className={css.cardImg}>
-          <img src={props.item.image} alt="img" />
+          {/* {props.item.image === null ? (
+            <img src={img} alt="img" />
+          ) : (
+            <img src={props.item.image} alt="img" />
+          )} */}
+          <img src={props.item.image} alt="" />
         </div>
-        <p key={props.item.id} className={css.text}>{props.item.title}</p>
+        <p key={props.item.id} className={css.text}>
+          {props.item.title}
+        </p>
       </div>
-    </Link>
+    </a>
   );
 };

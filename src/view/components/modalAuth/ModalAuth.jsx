@@ -9,33 +9,6 @@ export const ModalAuth = (props) => {
   const [password, setPassword] = useState("");
   // const [incorrect, setIncorrect] = useState(false)
   const history = useHistory();
-
-  // const submit = (e) => {
-  //   e.preventDefault();
-  //   fetch("http://127.0.0.1:8000/login/", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type":"application/json"
-  //     },
-  //     body:JSON.stringify(
-  //       {
-  //         username: `${username}`,
-  //         password: `${password}`
-  //       }
-  //     )
-  //   })
-  //   .then((res) => res.json())
-  //   .then((data) => {
-  //     localStorage.setItem("user", JSON.stringify(data))
-  //     props.authUser(data)
-  //     if(data.detail){
-  //       setIncorrect(true)
-  //       return;
-  //   }
-  //     console.log(data);
-  //     history.push("/personal")
-  //   })
-  // }
   
   const submit = (e) => {
     e.preventDefault()
@@ -44,10 +17,11 @@ export const ModalAuth = (props) => {
       password,
     };
     API.createUser(user)
-    .then((data) => {
-      localStorage.setItem("user", JSON.stringify(data))
-      props.authUser(data.data)
-      if (data.status === 200) {
+    .then((res) => {
+      localStorage.setItem("user", JSON.stringify(res))
+      props.setIsAuth(res.data.token)
+      console.log(props.isAuth);
+      if (res.status === 200) {
         props.setModal(false)
         history.push("/personal/")
       }
@@ -64,7 +38,7 @@ export const ModalAuth = (props) => {
     })
   };
   return (
-    <div className={props.auth === null ? "modal active" : "modal"}>
+    <div className={props.isAuth === null ? "modal active" : "modal"}>
       <div className={css.content} onClick={(e) => e.stopPropagation()}>
         <h1 className={css.contentH1}>Вход</h1>
         <div className={css.line}></div>
@@ -77,7 +51,6 @@ export const ModalAuth = (props) => {
             type="text"
             style={{boxShadow: `0 1px 10px 0 ${ error?'red':'white'}`, border: `1px solid ${error?'red':'black'}`, transition: "all 0.3s ease"}}
           />
-          <p style={{transition: "all 0.3s ease"}} className={css.errorText}>{error}</p>
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}

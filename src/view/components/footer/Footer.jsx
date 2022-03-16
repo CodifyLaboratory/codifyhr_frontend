@@ -1,8 +1,7 @@
 import css from "./footer.module.css";
 import Logo from "../../../assets/logo.png";
 import certificateImg from "../../../assets/certificateImg.png";
-import SimpleMap from "../map/Map";
-import { FooterLinks } from "../footerLinks/FooterLinks";
+import SimpleMap from "../map/Map"; 
 import facebookIcon from "../../../assets/facebookIcon.png";
 import instIcon from "../../../assets/instIcon.png";
 import { Networks } from "../networks/Networks";
@@ -29,7 +28,7 @@ export const Footer = () => {
             <p className={css.link}>г. Бишкек, ул. Исанова 105/3</p>
             <SimpleMap />
           </div>
-          <div className={css.linkBlock}>
+          <div className={`${css.linkBlock} ${css.firstLinkBlock} `}>
             <p className={css.mainLink}>САЙТ</p>
             <p className={css.link}>О нас</p>
             <p className={css.link}>Как мы работаем</p>
@@ -39,7 +38,7 @@ export const Footer = () => {
             <p className={css.link}>Личный кабинет </p>
             <p className={css.link}>Получить консультацию </p>
           </div>
-          <div className={css.linkBlock}>
+          <div className={`${css.linkBlock} ${css.firstLinkBlock} `}>
             <p className={css.mainLink}>РЕЗЮМЕ</p>
             <p className={css.link}>Front-end</p>
             <p className={css.link}>Back-end</p>

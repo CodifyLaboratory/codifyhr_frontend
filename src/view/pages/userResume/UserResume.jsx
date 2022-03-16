@@ -1,51 +1,80 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import css from "./userResume.module.css";
 import { Info } from "../../components/info/Info";
+import { useParams } from "react-router-dom";
 import API from "../../../api/API";
+import FileDownload from "js-file-download";
 import PhotoUser from "../../../assets/ava_personal.jpg";
-import Saved from "../../../assets/saved.png";
 import Save from "../../../assets/save.png";
+import Saved from "../../../assets/saved.png";
 
 export const UserResume = () => {
-  const [select, setSelect] = useState()
-  const [resume, setResume] = useState(null)
+  const [select, setSelect] = useState();
+  const [pending, setPending] = useState(true);
+  const [resume, setResume] = useState([]);
+  const params = useParams();
 
   useEffect(() => {
-    const id = JSON.parse(localStorage.getItem("user"))?.user__id
-    API.getResume(id)
-    .then((res) => {
-      setResume(res.data)
-      console.log(res.data);
-    })
-  }, [])
-  console.log(resume);
+    API.getResume(params.id)
+    .finally(() => setPending(false))
+    .then((data) => {
+      setResume(data.data);
+    });
+  }, []);
+  if(pending) {
+    return <div></div>
+  }
+  const download = (e) => {
+    e.preventDefault()
+      FileDownload(resume.file, "resume.pdf")
+  }
   return (
     <div className="container">
       <div className={css.infoUser}>
         <div className={css.mainInfo}>
           <div className={css.profilePhoto}>
-            <img src={PhotoUser} alt="" />
+          {
+            resume.image ? 
+            <img src={PhotoUser} alt="img" />
+            : 
+            <img src={resume.image} alt="img" />
+          }
           </div>
           <div className={css.mainDes}>
             <div className={css.saveItem}>
-              <p className={css.mainInfoTitle}>Основная информация</p>
-              {!select && <img className={css.saveImg} src={Save} alt="selecet" onClick={() => setSelect(!select)}/>}
-              {select && <img className={css.saveImg} src={Saved} alt="seleceted" onClick={() => setSelect(!select)}/>}
+              <p key={resume.id} className={css.mainInfoTitle}>
+                Основная информация
+              </p>
+              {!select && (
+                <img
+                  className={css.saveImg}
+                  src={Save}
+                  alt="selecet"
+                  onClick={() => setSelect(!select)}
+                />
+              )}
+              {select && (
+                <img
+                  className={css.saveImg}
+                  src={Saved}
+                  alt="seleceted"
+                  onClick={() => setSelect(!select)}
+                />
+              )}
             </div>
-            <Info titleText="Имя" infoText={""} />
-            <Info titleText="Фамилия" data={""} />
-            <Info titleText="Специализация" infoText="Full-stack Development" />
-            <Info titleText="Опыт работы" infoText="100+ лет" />
+            <Info titleText="Имя" data={resume.first_name} />
+            <Info titleText="Фамилия" data={resume.surname} />
+            <Info titleText="Специализация" data={resume.category} />
           </div>
         </div>
         <div className={`${css.mainDes} ${css.mainDes_down}`}>
           <p className={css.mainInfoTitle}>Контактные данные</p>
-          <Info titleText="Мобильный телефон" infoText="+996(704)-32-90-76" />
-          <Info titleText="Электронная почта" infoText="kalinina_s@gmail.com" />
+          <Info titleText="Мобильный телефон" data={resume.phone_number} />
+          <Info titleText="Электронная почта" data={resume.email} />
         </div>
       </div>
       <div className={css.infoBtn}>
-        <button>Скачать резюме</button>
+        <button onClick={(e) => download(e)}>Скачать резюме</button>
       </div>
     </div>
   );

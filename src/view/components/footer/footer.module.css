@@ -46,6 +46,17 @@
     height: 200px;
     z-index: 0;
 }
+
+/* map */
+
+.mapSize > div {
+    max-width: 320px;
+    width: 100%;
+}
+
+
+/*  */
+
 .links {
     display: flex;
     grid-gap: 50px;
@@ -129,6 +140,11 @@
 @media screen and (max-width: 610px) {
     .mapBlock {
         margin-bottom: 45px;
+    }
+}
+@media screen and (max-width: 628px) {
+    .firstLinkBlock {
+        margin-top: 90px;
     }
 }
 @media screen and (max-width: 540px) {

@@ -1,162 +1,186 @@
 .bgSearch {
-    background-image: url(../../../assets/searchMain2.png);
-    background-repeat: no-repeat;
-    max-width: 1440px;
-    width: 100%;
-    padding: 260px 0;
-    margin: 0 auto;
-    background-size: cover;
+  background-image: url(../../../assets/searchMain2.png);
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  width: 100%;
+  padding: 260px 0;
+  margin: 0 auto;
+  background-size: cover;
 }
 
-.bgSearch>div {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 60px;
+.bgSearch > div {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 60px;
 }
 
 .searchTitle {
-    display: flex;
-    justify-content: center;
-    text-align: center
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .searchTitleText {
-    max-width: 900px;
-    width: 100%;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 60px;
-    color: #fff;
+  max-width: 900px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 60px;
+  color: #fff;
 }
 
 .searchBlock {
-    display: flex;
-    justify-content: center;
-    grid-gap: 10px;
+  display: flex;
+  justify-content: center;
+  grid-gap: 10px;
+  position: relative;
 }
 
 .searchInput {
-    max-width: 655px;
-    width: 100%;
-    border: 1px solid #D6D6D6;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    padding: 9px 12px;
-    grid-gap: 12px;
+  max-width: 655px;
+  width: 100%;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 9px 12px;
+  grid-gap: 12px;
 }
 
-.searchInput>img {
-    width: 20px;
-    height: 20px;
+.searchInput > img {
+  width: 20px;
+  height: 20px;
 }
 
-.searchInput>input {
-    background: transparent;
-    color: #D6D6D6;
-    font-size: 18px;
-    line-height: 22px;
-    border: none;
-    outline: none;
+.searchInput > input {
+  background: transparent;
+  color: #d6d6d6;
+  font-size: 18px;
+  line-height: 22px;
+  border: none;
+  outline: none;
 }
 
-.searchInput>input::placeholder {
-    color: #D6D6D6;
+.searchInput > input::placeholder {
+  color: #d6d6d6;
 }
 
-.searchBlock>button {
-    padding: 8px 67px;
-    background-color: #2D51A3;
-    text-transform: uppercase;
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #fff;
-    transition: all .2s ease;
+.searchBlock > button {
+  padding: 8px 67px;
+  background-color: #2d51a3;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  transition: all 0.2s ease;
 }
-.searchBlock>button:hover {
-    background-color: #3c65c5;
+.searchBlock > button:hover {
+  background-color: #3c65c5;
+}
+.filter {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  background-color: #fff;
+  max-width: 850px;
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  max-height: 200px;
+  overflow: auto;
+}
+.filter > li {
+  color: #000;
+  list-style: none;
+  transition: all 0.45ms ease;
+  cursor: pointer;
+  padding: 8px 20px ;
+}
+.filter > li:hover {
+  background-color: #3c65c5;
+  color: #fff;
 }
 
 
 @media screen and (max-width: 992px) {
-    .bgSearch {
-        padding: 150px 70px;
-    }
+  .bgSearch {
+    padding: 150px 70px;
+  }
 
-    .searchTitleText {
-        font-size: 38px;
-        line-height: 50px;
-    }
+  .searchTitleText {
+    font-size: 38px;
+    line-height: 50px;
+  }
 
-    .searchBlock>button {
-        padding: 6px 45px;
-        font-size: 14px;
-    }
+  .searchBlock > button {
+    padding: 6px 45px;
+    font-size: 14px;
+  }
 }
-@media screen and (max-width: 768px){
-    .bgSearch {
-        padding: 120px 60px;
-    }
+@media screen and (max-width: 768px) {
+  .bgSearch {
+    padding: 120px 60px;
+  }
 
-    .searchTitleText {
-        font-size: 34px;
-        line-height: 40px;
-    }
-    .searchInput  {
-        padding: 7px 10px;
-        grid-gap: 8px;
-    } 
-    .searchInput>img {
-        width: 16px;
-        height: 16px;
-    }
-    .searchInput>input {
-        font-size: 16px;
-    }
-    .searchBlock>button {
-        padding: 6px 35px;
-        font-size: 12px;
-    }
+  .searchTitleText {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .searchInput {
+    padding: 7px 10px;
+    grid-gap: 8px;
+  }
+  .searchInput > img {
+    width: 16px;
+    height: 16px;
+  }
+  .searchInput > input {
+    font-size: 16px;
+  }
+  .searchBlock > button {
+    padding: 6px 35px;
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 540px) {
-    .bgSearch {
-        background-image: url(../../../assets/phoneBg.png);
-        padding: 164px 10px;
-        max-width: 540px;
-        width: 100%;
-        min-height: 630px;
-    }
+  .bgSearch {
+    background-image: url(../../../assets/phoneBg.png);
+    padding: 164px 10px;
+    max-width: 540px;
+    width: 100%;
+    min-height: 630px;
+  }
 
-    .searchTitleText {
-        font-size: 24px;
-        line-height: 28px;
-    }
+  .searchTitleText {
+    font-size: 24px;
+    line-height: 28px;
+  }
 
-    .searchInput>img {
-        display: none;
-    }
+  .searchInput > img {
+    display: none;
+  }
 
-    .searchInput {
-        padding: 6px;
-    }
+  .searchInput {
+    padding: 6px;
+  }
 
-    .searchInput>input {
-        max-width: 290px;
-        width: 100%;
-        border-radius: 3px;
-        padding: 0;
-        grid-gap: 12px;
-        font-size: 13px;
-        line-height: 16px;
-    }
+  .searchInput > input {
+    max-width: 290px;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0;
+    grid-gap: 12px;
+    font-size: 13px;
+    line-height: 16px;
+  }
 
-    .searchBlock>button {
-        padding: 13px 24px;
-        font-size: 11px;
-        line-height: 12px;
-        border-radius: 5px;
-    }
+  .searchBlock > button {
+    padding: 13px 24px;
+    font-size: 11px;
+    line-height: 12px;
+    border-radius: 5px;
+  }
 }

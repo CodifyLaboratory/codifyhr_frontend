@@ -20,7 +20,7 @@ API.interceptors.request.use((config) => {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-    getPartners: (data) => API.get("main/", data),
+    getPartners: (data) => API.get("partners/", data),
     createUser: (data) => API.post("login/", data),
     getResumes: () => API.get("resumes/"),
     getResume: (id) => API.get("resumes/" + id),
