@@ -1,28 +1,36 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import css from "./resume.module.css";
 import { Select } from "../../components/select/Select";
-import {Candidat} from "../../components/candidat/Candidat"
+import { Candidat } from "../../components/candidat/Candidat";
 import API from "../../../api/API";
-import { Link } from "react-router-dom";
 
-export const Resume = () => {
-  const [resumes, setResumes] = useState([])
+export const Resume = (props) => {
+  const profession = [
+    "Frontend",
+    "Backend",
+    "Project Manager",
+    "UX, UI Designe",
+    "Android Devs",
+    "iOS Devs",
+    "Testing QA",
+    "Graphis Design",
+  ];
+  const [resumes, setResumes] = useState([]);
   useEffect(() => {
-    API.getResumes()
-    .then((res) => {
-      setResumes(res.data)
-    })
-  })
+    API.getResumes().then((res) => {
+      setResumes(res.data);
+    });
+  }, []);
 
   return (
     <div className="container">
       <div className={css.select}>
-        <Select selectTitle="Сортировать по" />
+      <Select key={profession.id} profession={profession}/>
       </div>
       <div className={css.itemsResume}>
-        {
-          resumes.map((item) => <Link className="navLink" to={`/user-resume/${item.id}`}> <Candidat item={item}/> </Link>)
-        }
+        {resumes.map((item) => (
+            <Candidat key={item.id} item={item}/>
+        ))}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+
 import css from "./personal.module.css";
 import Ava from "../../../assets/ava_personal.jpg";
 import Phone from "../../../assets/phone_personal.svg";
@@ -5,9 +6,8 @@ import Email from "../../../assets/email_personal.svg";
 import Left from "../../../assets/left_arrow_personal.svg";
 import Right from "../../../assets/right_arrow_personal.svg";
 // import Down from "../../../assets/down_arrow_personal.svg"
-import { Candidat } from "../../components/candidat/Candidat";
-
 export const Personal = () => {
+
   return (
     <div className="container">
       <div className={css.personal}>
@@ -15,7 +15,7 @@ export const Personal = () => {
           <img src={Ava} alt="" />
         </div>
         <div className={css.info}>
-          <p>Абайдулаева Айдай Орозалиева</p>
+          <p></p>
           <p className={css.company}>Название компании</p>
           <div className={css.phone}>
             <img src={Phone} alt="" />
