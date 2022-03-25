@@ -1,13 +1,15 @@
 import axios from "axios"
 
 const API = axios.create({
-    baseURL: "http://127.0.0.1:8000/"
+    // baseURL: "http://127.0.0.1:8000/"
+    baseURL: "http://174.138.41.186/"
 })
 
 const getToken = () => {
-    const token = JSON.parse(localStorage.getItem("user"))?.access;
+    const token = JSON.parse(localStorage.getItem("user"));
     return token;
 }
+console.log(getToken());
 
 API.interceptors.request.use((config) => {
     if(getToken()){
@@ -24,4 +26,5 @@ export default {
     createUser: (data) => API.post("login/", data),
     getResumes: () => API.get("resumes/"),
     getResume: (id) => API.get("resumes/" + id),
+    getUser: () => API.get("user/"),
 }

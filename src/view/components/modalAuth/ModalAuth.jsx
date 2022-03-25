@@ -28,12 +28,12 @@ export const ModalAuth = (props) => {
     })
     .catch((error) => {
       if (error.status === 400) {
-        setError("Логин или пороль ввели не правильно");
+        setError("Логин или пароль ввели не правильно");
       }else if(username === ""){
         setError("Это обязательное поле")
       }
       else {
-        setError("Логин или пороль ввели не правильно")
+        setError("Логин или пароль ввели не правильно")
       }
     })
   };
@@ -60,7 +60,7 @@ export const ModalAuth = (props) => {
             style={{boxShadow: `0 1px 10px 0 ${ error?'red':'white'}`, border: `1px solid ${error?'red':'black'}`, transition: "all 0.3s ease"}}
           />
            <p style={{transition: "all 0.3s ease"}} className={css.errorText}>{error}</p>
-          <p className={css.forgotLink}>Забыли пороль?</p>
+          <p className={css.forgotLink}>Забыли пароль?</p>
           <button>ВОЙТИ</button>
         </form>
       </div>
