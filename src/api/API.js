@@ -8,6 +8,14 @@ const API = axios.create({
 })
 
 let token = JSON.parse(localStorage.getItem("user"))
+    // baseURL: "http://127.0.0.1:8000/"
+    baseURL: "http://174.138.41.186/"
+})
+
+const getToken = () => {
+    const token = JSON.parse(localStorage.getItem("user"));
+    return token;
+}
 
 // const getToken = () => {
 //     const token = JSON.parse(localStorage.getItem("user"));
@@ -36,5 +44,5 @@ export default {
     getWishlist: () => API.get("wishlist/"),
     getWishlist: () => API.get("wishlist/"),
     getCategories: () => API.get("categories/")
-    
+
 }

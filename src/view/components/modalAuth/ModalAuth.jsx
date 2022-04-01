@@ -27,12 +27,12 @@ export const ModalAuth = (props) => {
     })
     .catch((error) => {
       if (error.status === 400) {
-        setError("Логин или пороль ввели не правильно");
+        setError("Логин или пароль ввели не правильно");
       }else if(username === ""){
         setError("Это обязательное поле")
       }
       else {
-        setError("Логин или пороль ввели не правильно")
+        setError("Логин или пароль ввели не правильно")
       }
     })
   };
