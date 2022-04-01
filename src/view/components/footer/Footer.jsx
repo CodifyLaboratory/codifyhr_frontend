@@ -5,7 +5,7 @@ import SimpleMap from "../map/Map";
 import facebookIcon from "../../../assets/facebookIcon.png";
 import instIcon from "../../../assets/instIcon.png";
 import { Networks } from "../networks/Networks";
-
+import { Link } from "react-scroll"
 export const Footer = () => {
   return (
     <div className={css.footer}>
@@ -28,17 +28,17 @@ export const Footer = () => {
             <p className={css.link}>г. Бишкек, ул. Исанова 105/3</p>
             <SimpleMap />
           </div>
-          <div className={`${css.linkBlock} ${css.firstLinkBlock} `}>
+          <div className={css.firstLinkBlock}>
             <p className={css.mainLink}>САЙТ</p>
-            <p className={css.link}>О нас</p>
-            <p className={css.link}>Как мы работаем</p>
+            <Link to="aboutus" smooth={true} duration={500} className={css.link}>О нас</Link>
+            <Link to="howWeWork" smooth={true} duration={500} className={css.link}>Как мы работаем</Link>
             <p className={css.link}>Курсы, тренинги, семинары</p>
-            <p className={css.link}>Наши партнеры</p>
+            <Link to="ourPartners" smooth={true} duration={500} className={css.link}>Наши партнеры</Link>
             <p className={css.link}>Резюме студентов</p>
             <p className={css.link}>Личный кабинет </p>
             <p className={css.link}>Получить консультацию </p>
           </div>
-          <div className={`${css.linkBlock} ${css.firstLinkBlock} `}>
+          <div className={css.firstLinkBlock}>
             <p className={css.mainLink}>РЕЗЮМЕ</p>
             <p className={css.link}>Front-end</p>
             <p className={css.link}>Back-end</p>

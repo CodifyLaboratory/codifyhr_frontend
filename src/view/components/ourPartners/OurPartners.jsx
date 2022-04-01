@@ -15,7 +15,7 @@ export const OurPartners = () => {
     console.log(partners.image);
     return (
         <div className="container">
-            <p className={css.title}>Компании, в которых работают наши студенты</p>
+            <p id="ourPartners" className={css.title}>Компании, в которых работают наши студенты</p>
                 <div className={css.cards}>
                     <div className={css.cardsItem}>
                         {

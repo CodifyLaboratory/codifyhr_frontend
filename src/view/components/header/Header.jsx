@@ -9,18 +9,18 @@ import { ModalAuth } from "../modalAuth/ModalAuth";
 
 export const Header = (props) => {
   const [burger, setBurger] = useState(false);
-  const [modal, setModal] = useState(true);
   const activeBurger = () => setBurger((p) => !p);
+
   return (
     <div className={css.header}>
-      {modal === false ? (
+      {props.isAuth ? (
         <></>
       ) : (
         <ModalAuth
-          // authUser={props.authUser}
+          authUser={props.authUser}
           isAuth={props.isAuth}
           setIsAuth={props.setIsAuth}
-          setModal={setModal}
+          setModal={props.setModal}
         />
       )}
 
@@ -46,25 +46,46 @@ export const Header = (props) => {
                 alt=""
               />
             </Link>
-            <div className={css.burgerLinks}>
-              <Link onClick={activeBurger} className={css.link} to="/personal">
-                <p className={`${css.userText} ${css.burgerLink}`}>
-                  Личный кабинет
-                </p>
-              </Link>
-              <Link onClick={activeBurger} className={css.link} to="/resume">
-                <button className={`${css.navItem} ${css.blackLink}  ${css.burgerLink}`}>
-                  Спиcок резюме
-                </button>
-              </Link>
-              <Link onClick={activeBurger} className={css.link} exact to="/get">
-                <li
-                  className={`${css.navItem} ${css.blueLink} ${css.burgerLink}`}
+            {props.isAuth === null ? (
+              <></>
+            ) : (
+              <div className={css.burgerLinks}>
+                <Link
+                  onClick={activeBurger}
+                  className={css.link}
+                  to="/personal"
                 >
-                  Получить консультацию
-                </li>
-              </Link>
-            </div>
+                  <p className={`${css.userText} ${css.burgerLink}`}>
+                    Личный кабинет
+                  </p>
+                </Link>
+                <Link
+                  onClick={activeBurger}
+                  className={css.link}
+                  to="/marker-list"
+                >
+                  <p className={`${css.userText} ${css.burgerLink}`}>
+                    Мои закладки
+                  </p>
+                </Link>
+                <Link onClick={activeBurger} className={css.link} to="/resume">
+                  <button
+                    className={`${css.navItem} ${css.blackLink}  ${css.burgerLink}`}
+                  >
+                    Спиcок резюме
+                  </button>
+                </Link>
+              </div>
+            )}
+              <div className={css.burgerLinks}>
+                <a href="tel:+996709699079">
+                  <li
+                    className={`${css.navItem} ${css.blueLink} ${css.burgerLink}`}
+                  >
+                    Получить консультацию
+                  </li>
+                  </a>
+                </div>
           </div>
           <Link className={css.link} to={"/"}>
             <img className={css.logoIcon} src={Logo} alt="" />
@@ -76,29 +97,34 @@ export const Header = (props) => {
               Спиcок резюме
             </button>
           </Link>
-          {/* <Link className={css.link} exact to="/get"> */}
-            <a href="tel:+996709699079" className={`${css.navItem} ${css.blueLink}`}>
-              Получить консультацию
-            </a>
-          {/* </Link> */}
+          <a
+            href="tel:+996709699079"
+            className={`${css.navItem} ${css.blueLink}`}
+          >
+            Получить консультацию
+          </a>
         </ul>
         <div className={css.userItem}>
-          <p className={css.userTexts}>
-            {props.authUser === null ? (
+          <div className={css.userTexts}>
+            {props.isAuth === null ? (
               <></>
             ) : (
               <div className={css.icons}>
-              <Link className={css.link} to="/marker-list">
-                <img className={`${css.userIcon} ${css.userIconMarker}`} src={saveIcon} alt="" />
+                <Link className={css.link} to="/marker-list">
+                  <img
+                    className={`${css.userIcon} ${css.userIconMarker}`}
+                    src={saveIcon}
+                    alt=""
+                  />
                 </Link>
-              <Link className={css.link} to="/personal">
-                <p className={css.userText}>Личный кабинет</p>
-                <img className={css.userIcon} src={userIcon} alt="" />
-              </Link>
+                <Link className={css.link} to="/personal">
+                  <p className={css.userText}>Личный кабинет</p>
+                  <img className={css.userIcon} src={userIcon} alt="" />
+                </Link>
               </div>
             )}
-          <p className={css.textLanguage}>RU</p>
-          </p>
+            <p className={css.textLanguage}>RU</p>
+          </div>
         </div>
       </nav>
     </div>

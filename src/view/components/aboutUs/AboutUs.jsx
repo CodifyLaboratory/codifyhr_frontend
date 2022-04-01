@@ -5,7 +5,7 @@ import { AboutUsDescription } from "../aboutUsDescription/AboutUsDescription"
 
 export const AboutUs = () => {
     return (
-        <div className="container">
+        <div id="aboutus" className="container">
             <div className={css.aboutUs}>
                 <div className={css.leftImg}>
                     <img src={AboutUsLeftImg} alt="" />

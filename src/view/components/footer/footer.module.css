@@ -75,7 +75,6 @@
     line-height: 22px;
     color: #292929;
     cursor: pointer;
-    margin-bottom: 10px;
 }
 .link:hover {
     transition: all .2s ease;
@@ -122,6 +121,11 @@
     
     width: 20px;
     height: 20px;
+}
+.firstLinkBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 @media screen and (max-width: 768px) {
     .link, .contactNumber{

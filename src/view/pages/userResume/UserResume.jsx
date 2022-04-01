@@ -7,11 +7,20 @@ import FileDownload from "js-file-download";
 import PhotoUser from "../../../assets/ava_personal.jpg";
 import Save from "../../../assets/save.png";
 import Saved from "../../../assets/saved.png";
-
+import axios from "axios"
 export const UserResume = () => {
   const [select, setSelect] = useState();
   const [pending, setPending] = useState(true);
   const [resume, setResume] = useState([]);
+  // const [image, setImage] = useState([]);
+  // const [firstName, setFirstName] = useState([]);
+  // const [surname, setSurname] = useState([]);
+  // const [phone, setPhone] = useState([]);
+  // const [email, setEmail] = useState([]);
+  // const [category, setCategory] = useState([]);
+  // const [file, setFile] = useState([]);
+  // const [lastName, setLastName] = useState([]);
+  // const [comment, setComment] = useState([]);
   const params = useParams();
 
   useEffect(() => {
@@ -21,6 +30,16 @@ export const UserResume = () => {
       setResume(data.data);
     });
   }, []);
+
+  const createWish = (e) => {
+    e.preventDefault()
+    axios.post("https://623446386d5465eaa5170d13.mockapi.io/wishlist/list/", {
+      id: resume.id,
+    })
+    .then((res) => console.log(res.data))
+  }
+  console.log(createWish);
+
   if(pending) {
     return <div></div>
   }
@@ -28,6 +47,7 @@ export const UserResume = () => {
     e.preventDefault()
       FileDownload(resume.file, "resume.pdf")
   }
+
   return (
     <div className="container">
       <div className={css.infoUser}>
@@ -35,9 +55,9 @@ export const UserResume = () => {
           <div className={css.profilePhoto}>
           {
             resume.image ? 
-            <img src={PhotoUser} alt="img" />
-            : 
             <img src={resume.image} alt="img" />
+            : 
+            <img src={PhotoUser} alt="img" />
           }
           </div>
           <div className={css.mainDes}>
@@ -46,20 +66,24 @@ export const UserResume = () => {
                 Основная информация
               </p>
               {!select && (
+              <div onClick={createWish}>
                 <img
                   className={css.saveImg}
                   src={Save}
                   alt="selecet"
                   onClick={() => setSelect(!select)}
                 />
+                </div>
               )}
               {select && (
+                <div>
                 <img
                   className={css.saveImg}
                   src={Saved}
                   alt="seleceted"
                   onClick={() => setSelect(!select)}
                 />
+                </div>
               )}
             </div>
             <Info titleText="Имя" data={resume.first_name} />
