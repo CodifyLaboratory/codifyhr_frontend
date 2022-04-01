@@ -1,5 +1,5 @@
 import React from "react";
-import { YMaps, Map } from "react-yandex-maps";
+import { YMaps, Map, Placemark } from "react-yandex-maps";
 import css from "../footer/footer.module.css";
 function GoogleMap() { 
 
@@ -9,7 +9,9 @@ function GoogleMap() {
         className={css.mapSize}
         style={{ maxWidth: "320px", width: "100%", zIndex: 0}}
       >
-        <Map defaultState={{ center: [42.87, 74.59], zoom: 17,}}  width="100%"/>
+        <Map defaultState={{ center: [42.877720, 74.592247], zoom: 16,}}  width="100%">
+          <Placemark geometry={[42.877720, 74.592247]}/>
+        </Map>
       </div>
     </YMaps>
   );

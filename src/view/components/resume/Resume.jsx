@@ -8,7 +8,7 @@ import TestingImg from "../../../assets/TestingImg'.png"
 import GraphicImg from "../../../assets/GraphicImg.png"
 import DesignImg from "../../../assets/DesignImg.png"
 
-export const Resume = () => {
+export const Resume = (props) => {
     return (
         <div className="container">
             <div className={css.resume}>

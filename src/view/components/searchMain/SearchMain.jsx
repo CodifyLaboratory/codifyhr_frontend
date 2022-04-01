@@ -1,28 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./searchMain.module.css";
 import Loupe from "../../../assets/loupe.png";
 import { useHistory } from "react-router-dom";
-export const SearchMain = () => {
+import API from "../../../api/API";
+
+export const SearchMain = (props) => {
+  const [category, setCategory] = useState([]);
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(true);
   const history = useHistory();
 
-  const profecion = [
-    "Frontend",
-    "Backend",
-    "Proect Manager",
-    "UX, UI Designe",
-    "Android Devs",
-    "iOS Devs",
-    "Testing QA",
-    "Graphis Design",
-  ];
 
-  const filterProfecion = profecion.filter((name) => {
+  useEffect(() => {
+    API.getCategories()
+    .then((res) => {
+      setCategory(res.data)
+    })
+  }, []);
+
+
+  const filterCategory = category.filter((name) => {
     return name.toLowerCase().includes(value.toLowerCase());
   });
 
   const submit = (e) => {
+    props.setModal(true)
     e.preventDefault();
     if (value) {
       history.push("/resume/");
@@ -35,6 +37,7 @@ export const SearchMain = () => {
     setValue(e.target.textContent);
     setIsOpen(!isOpen);
   };
+  
   const inputClickHandler = () => {
     setIsOpen(true);
   };
@@ -59,12 +62,12 @@ export const SearchMain = () => {
           </div>
           <ul className={css.filter}>
             {value && isOpen
-              ? filterProfecion.map((item) => {
-                  return <li onClick={clickHandler}>{item}</li>;
+              ? filterCategory.map((item) => {
+                  return <li key={item.id} onClick={clickHandler}>{item.name}</li>;
                 })
               : null}
           </ul>
-          <button>найти</button>
+          <button >найти</button>
         </form>
       </div>
     </div>

@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react";
-import API from "../../../api/API";
-
 import css from "./personal.module.css";
 import Ava from "../../../assets/ava_personal.jpg";
 import Phone from "../../../assets/phone_personal.svg";
 import Email from "../../../assets/email_personal.svg";
 import Left from "../../../assets/left_arrow_personal.svg";
 import Right from "../../../assets/right_arrow_personal.svg";
-// import Down from "../../../assets/down_arrow_personal.svg"
 export const Personal = () => {
-
-  const [user, setUser] = useState([])
-  useEffect(() => {
-    API.getUser()
-    .then((res) => {
-      setUser(res.data)
-    })
-  })
-  console.log(user);
-
   return (
     <div className="container">
       <div className={css.personal}>

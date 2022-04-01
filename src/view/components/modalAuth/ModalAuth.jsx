@@ -4,10 +4,10 @@ import css from "./modalAuth.module.css";
 import { useHistory } from "react-router-dom";
 
 export const ModalAuth = (props) => {
+
   const [error, setError] = useState("")
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [incorrect, setIncorrect] = useState(false)
   const history = useHistory();
   
   const submit = (e) => {
@@ -18,7 +18,6 @@ export const ModalAuth = (props) => {
     };
     API.createUser(user)
     .then((res) => {
-      localStorage.setItem("user", JSON.stringify(res))
       props.setIsAuth(res.data.token)
       console.log(props.isAuth);
       if (res.status === 200) {
@@ -37,8 +36,10 @@ export const ModalAuth = (props) => {
       }
     })
   };
+
+
   return (
-    <div className={props.isAuth === null ? "modal active" : "modal"}>
+    <div className="modal active">
       <div className={css.content} onClick={(e) => e.stopPropagation()}>
         <h1 className={css.contentH1}>Вход</h1>
         <div className={css.line}></div>

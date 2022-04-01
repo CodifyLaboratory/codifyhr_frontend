@@ -7,34 +7,48 @@ import { Footer } from "./view/components/footer/Footer";
 import { Main } from "./view/pages/main/Main";
 import { Resume } from "./view/pages/resume/Resume";
 import { UserResume } from "./view/pages/userResume/UserResume";
-import {PrivateRoute} from "../src/route/PrivateRoute"
+import { PrivateRoute } from "../src/route/PrivateRoute";
 import Marker from "./view/pages/marker/Marker";
+import API from "./api/API";
+
 function App() {
+  const [modal, setModal] = useState(true);
   // const [isAuth, setIsAuth] = useState(() =>
   //   JSON.parse(localStorage.getItem("user"))
   // );
   // const authUser = (obj) => {
   //   localStorage.setItem("user", JSON.stringify(obj))
   // }
-  const [isAuth, setIsAuth] = useState(() => JSON.parse(localStorage.getItem("user")));
-    useEffect(() => {
-        localStorage.setItem("user", JSON.stringify(isAuth))
-    }, [isAuth])
+  const [isAuth, setIsAuth] = useState(() =>
+    JSON.parse(localStorage.getItem("user"))
+  );
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(isAuth));
+  }, [isAuth]);
+
+  // const [isAuth, setIsAuth] = useState(null);
+  // useEffect(() => {
+  //   setIsAuth(JSON.parse(localStorage.getItem("user")));
+  // }, [isAuth]);
   return (
     <Router>
       <div className="App">
-        <Header isAuth={isAuth} setIsAuth={setIsAuth}/>
+        <Header setModal={setModal} modal={modal} isAuth={isAuth} setIsAuth={setIsAuth}/>
         <Switch>
-        <PrivateRoute exact path="/user-resume/:id" isAuth={isAuth} Component={UserResume}/>
-        <PrivateRoute path="/personal/" isAuth={isAuth} Component={Personal}/>
-          <Route path="/resume">
-            <Resume />
+          <PrivateRoute
+            exact
+            path="/user-resume/:id"
+            user={isAuth}
+            Component={UserResume}
+          />
+          <PrivateRoute path="/personal/" user={isAuth} Component={Personal} />
+          {/* <PrivateRoute path="/resume/" Component={<Resume isAuth={isAuth} setIsAuth={setIsAuth} />} /> */}
+          <PrivateRoute path="/marker-list/" user={isAuth} Component={Marker} />
+          <Route exact path="/resume/">
+            <Resume isAuth={isAuth} setIsAuth={setIsAuth}/>
           </Route>
-          <Route path="/marker-list">
-            <Marker />
-          </Route>
-          <Route path="/">
-            <Main />
+          <Route exact path="/">
+            <Main modal={modal} setModal={setModal} />
           </Route>
           <Route path="*">
             <p className="error">404 error! Такоe страницы нет!</p>

@@ -5,31 +5,30 @@ import { Candidat } from "../../components/candidat/Candidat";
 import API from "../../../api/API";
 
 export const Resume = (props) => {
-  const profession = [
-    "Frontend",
-    "Backend",
-    "Project Manager",
-    "UX, UI Designe",
-    "Android Devs",
-    "iOS Devs",
-    "Testing QA",
-    "Graphis Design",
-  ];
+  const [pending, setPending] = useState(true);
+  const [category, setCategory] = useState([]);
   const [resumes, setResumes] = useState([]);
+  
   useEffect(() => {
     API.getResumes().then((res) => {
+      setPending(false);
       setResumes(res.data);
     });
+    API.getCategories()
+    .then((res) => {
+      console.log(res.data);
+      setCategory(res.data)
+    })
   }, []);
 
   return (
     <div className="container">
       <div className={css.select}>
-      <Select key={profession.id} profession={profession}/>
+        <Select key={category.id} profession={category} />
       </div>
       <div className={css.itemsResume}>
         {resumes.map((item) => (
-            <Candidat key={item.id} item={item}/>
+          <Candidat key={item.id} item={item} />
         ))}
       </div>
     </div>
