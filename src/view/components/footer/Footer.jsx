@@ -5,7 +5,9 @@ import SimpleMap from "../map/Map";
 import facebookIcon from "../../../assets/facebookIcon.png";
 import instIcon from "../../../assets/instIcon.png";
 import { Networks } from "../networks/Networks";
-import { Link } from "react-scroll"
+import { Link as ScrollLink } from "react-scroll"
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <div className={css.footer}>
@@ -30,23 +32,23 @@ export const Footer = () => {
           </div>
           <div className={css.firstLinkBlock}>
             <p className={css.mainLink}>САЙТ</p>
-            <Link to="aboutus" smooth={true} duration={500} className={css.link}>О нас</Link>
-            <Link to="howWeWork" smooth={true} duration={500} className={css.link}>Как мы работаем</Link>
-            <p className={css.link}>Курсы, тренинги, семинары</p>
-            <Link to="ourPartners" smooth={true} duration={500} className={css.link}>Наши партнеры</Link>
-            <p className={css.link}>Резюме студентов</p>
-            <p className={css.link}>Личный кабинет </p>
-            <p className={css.link}>Получить консультацию </p>
+            <ScrollLink to="aboutus" smooth={true} duration={500} className={css.link}>О нас</ScrollLink>
+            <ScrollLink to="howWeWork" smooth={true} duration={500} className={css.link}>Как мы работаем</ScrollLink>
+            <ScrollLink to="cours" smooth={true} className={css.link}>Курсы, тренинги, семинары</ScrollLink>
+            <ScrollLink to="ourPartners" smooth={true} duration={500} className={css.link}>Наши партнеры</ScrollLink>
+            <Link to="/resume" className={css.link}>Резюме студентов</Link>
+            <Link to="/personal" className={css.link}>Личный кабинет </Link>
+            <a href="tel:+996709699079" className={css.link}>Получить консультацию </a>
           </div>
           <div className={css.firstLinkBlock}>
             <p className={css.mainLink}>РЕЗЮМЕ</p>
-            <p className={css.link}>Front-end</p>
-            <p className={css.link}>Back-end</p>
-            <p className={css.link}>Android</p>
-            <p className={css.link}>Testing QA</p>
-            <p className={css.link}>Project Management</p>
-            <p className={css.link}>Graphic Design</p>
-            <p className={css.link}>UX / UI</p>
+            <Link to="/resume" className={css.link}>Front-end</Link>
+            <Link to="/resume" className={css.link}>Back-end</Link>
+            <Link to="/resume" className={css.link}>Android</Link>
+            <Link to="/resume" className={css.link}>Testing QA</Link>
+            <Link to="/resume" className={css.link}>Project Management</Link>
+            <Link to="/resume" className={css.link}>Graphic Design</Link>
+            <Link to="/resume" className={css.link}>UX / UI</Link>
           </div>
           <div className={css.linkBlock}>
             <p className={css.mainLink}>ДРУГОЕ</p>

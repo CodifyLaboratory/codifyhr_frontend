@@ -4,10 +4,10 @@ import { Personnel } from "../../components/personnel/Personnel"
 import { Resume } from "../../components/resume/Resume"
 import { SearchMain } from "../../components/searchMain/SearchMain"
 
-export const Main = ({modal, setModal}) => {
+export const Main = () => {
     return (
         <div>
-            {/* <SearchMain/> */}
+             <SearchMain/>
             <Resume/>
             <Personnel/>
             <AboutUs/>

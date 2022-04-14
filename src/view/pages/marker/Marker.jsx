@@ -15,12 +15,13 @@ const Marker = () => {
       setWishes(res.data);
     });
   }, []);
+  console.log(wishes);
   return (
     <div className={`${css.marker} ${"container"}`}>
       <h1 className={css.title}>Мои закладки</h1>
       <div className={css.markers}>
         {wishes.map((item) => (
-          <Candidat key={item.id} item={item} />
+          <Candidat key={item.id} item={item.wished_resume} />
         ))}
       </div>
     </div>

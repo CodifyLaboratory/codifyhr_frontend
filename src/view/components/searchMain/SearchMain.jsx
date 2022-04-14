@@ -18,13 +18,11 @@ export const SearchMain = (props) => {
     })
   }, []);
 
-
-  const filterCategory = category.filter((name) => {
-    return name.toLowerCase().includes(value.toLowerCase());
+  const filterCategory = category.filter((items) => {
+    return items.name.toLowerCase().includes(value.toLowerCase());
   });
 
   const submit = (e) => {
-    props.setModal(true)
     e.preventDefault();
     if (value) {
       history.push("/resume/");
@@ -37,7 +35,7 @@ export const SearchMain = (props) => {
     setValue(e.target.textContent);
     setIsOpen(!isOpen);
   };
-  
+
   const inputClickHandler = () => {
     setIsOpen(true);
   };

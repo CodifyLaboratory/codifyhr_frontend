@@ -7,11 +7,10 @@ export const OurPartnersCard = (props) => {
       <div className={css.card}>
         <div className={css.cardImg}>
           {props.item.image === null ? (
-            <img src={img} alt="img" />
+            <img src={img} alt="partners image" />
           ) : (
-            <img src={props.item.image} alt="img" />
+            <img src={props.item.image} alt="partners image" />
           )}
-          {/* <img src={props.item.image} alt="" /> */}
         </div>
         <p key={props.item.id} className={css.text}>
           {props.item.title}
