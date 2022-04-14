@@ -1,26 +1,46 @@
+import {useEffect, useState} from "react";
 import css from "./personal.module.css";
 import Ava from "../../../assets/ava_personal.jpg";
 import Phone from "../../../assets/phone_personal.svg";
 import Email from "../../../assets/email_personal.svg";
 import Left from "../../../assets/left_arrow_personal.svg";
 import Right from "../../../assets/right_arrow_personal.svg";
+import API from "../../../api/API";
+import {Candidat} from "../../components/candidat/Candidat";
+
 export const Personal = () => {
+  const [user, setUser] = useState([])
+  const [resumes, setResumes] = useState([])
+  const [pending, setPending] = useState(true)
+  useEffect(() => {
+    API.getUser()
+        .then((res) => {
+          setUser(res.data)
+        })
+    API.getResumes().then((res) => {
+      setPending(false);
+      setResumes(res.data);
+    });
+  }, [])
+
+  if(pending) return <div></div>
+
   return (
     <div className="container">
-      <div className={css.personal}>
+      <div key={user.id} className={css.personal}>
         <div className={css.ava}>
           <img src={Ava} alt="" />
         </div>
         <div className={css.info}>
           <p></p>
-          <p className={css.company}>Название компании</p>
+          <p className={css.company}>{user.username ? user.username : `"Нет информации"`}</p>
           <div className={css.phone}>
             <img src={Phone} alt="" />
-            <p>+996 123-13-12</p>
+            <p>{user.last_name ? user.last_name : `"Нет информации"` }</p>
           </div>
           <div className={css.email}>
             <img src={Email} alt="" />
-            <p>abdulaeva@gmail.com</p>
+            <p>{user.email ? user.email : `"Нет информации"`}</p>
           </div>
         </div>
       </div>
@@ -44,11 +64,9 @@ export const Personal = () => {
           </div>
         </div>
         <div className={css.resumes}>
-          {/* <Candidat />
-          <Candidat />
-          <Candidat />
-          <Candidat />
-          <Candidat /> */}
+          {resumes.map((item) => (
+              <Candidat key={item.id} item={item} />
+          ))}
         </div>
         {/* <button className={css.more_btn}>Смотреть еще <p><img src={Down} alt="" /></p></button> */}
       </div>

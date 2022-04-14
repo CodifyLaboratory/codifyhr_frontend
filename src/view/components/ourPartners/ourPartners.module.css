@@ -55,6 +55,13 @@
     color: #FFFFFF;
     cursor: pointer;
 }
+.arrowIcon {
+    max-width: 270px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .arrowIcon > img {
     width: 96px;
     height: 96px;

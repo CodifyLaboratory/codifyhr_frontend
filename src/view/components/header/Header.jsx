@@ -13,16 +13,12 @@ export const Header = (props) => {
 
   return (
     <div className={css.header}>
-      {props.isAuth ? (
-        <></>
-      ) : (
-        <ModalAuth
+      {props.authUser === false ? <ModalAuth
           authUser={props.authUser}
           isAuth={props.isAuth}
           setIsAuth={props.setIsAuth}
           setModal={props.setModal}
-        />
-      )}
+      /> : <></> }
 
       <nav className="container">
         <div className={css.logo}>
@@ -77,15 +73,15 @@ export const Header = (props) => {
                 </Link>
               </div>
             )}
-              <div className={css.burgerLinks}>
-                <a href="tel:+996709699079">
-                  <li
-                    className={`${css.navItem} ${css.blueLink} ${css.burgerLink}`}
-                  >
-                    Получить консультацию
-                  </li>
-                  </a>
-                </div>
+            <div className={css.burgerLinks}>
+              <a href="tel:+996709699079">
+                <li
+                  className={`${css.navItem} ${css.blueLink} ${css.burgerLink}`}
+                >
+                  Получить консультацию
+                </li>
+              </a>
+            </div>
           </div>
           <Link className={css.link} to={"/"}>
             <img className={css.logoIcon} src={Logo} alt="" />
@@ -93,7 +89,9 @@ export const Header = (props) => {
         </div>
         <ul className={css.navList}>
           <Link className={css.link} to="/resume">
-            <button className={`${css.navItem} ${css.blackLink}`}>
+            <button
+              className={`${css.navItem} ${css.blackLink}`}
+            >
               Спиcок резюме
             </button>
           </Link>

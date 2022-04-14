@@ -1,6 +1,14 @@
 import css from "../resume/resume.module.css"
+import {useHistory} from "react-router-dom";
 
 export const ResumeCard = (props) => {
+    const history = useHistory();
+
+    const pushResumesClick = (e) => {
+        e.preventDefault()
+        history.push("/resume/")
+    }
+
     return (
         <div className={css.card}>
             <div className={css.cardImg}>
@@ -8,7 +16,7 @@ export const ResumeCard = (props) => {
             </div>
             <div className={css.cardAbout}>
                 <p className={css.cardTitle}>{props.title}</p>
-                <button className={css.cardBtn}>список кандидатов</button>
+                <button onClick={pushResumesClick} className={css.cardBtn}>список кандидатов</button>
             </div>
         </div>
     )

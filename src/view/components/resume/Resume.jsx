@@ -10,7 +10,7 @@ import DesignImg from "../../../assets/DesignImg.png"
 
 export const Resume = (props) => {
     return (
-        <div className="container">
+        <div id="resumes" className="container">
             <div className={css.resume}>
                 <p className={css.resumeTitle}>Резюме</p>
                 <div className={css.cards}>
