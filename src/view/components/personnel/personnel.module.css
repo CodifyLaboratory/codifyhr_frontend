@@ -14,7 +14,7 @@
     font-size: 36px;
     line-height: 44px; 
     color: #292929;
-
+    text-align: center;
 }
 .personnelSection {
     display: flex;
@@ -46,6 +46,7 @@
     font-size: 20px;
     line-height: 24px;
     color: #292929;
+    text-align: center;
 }
 @media screen and (max-width: 540px) { 
     .personnel {

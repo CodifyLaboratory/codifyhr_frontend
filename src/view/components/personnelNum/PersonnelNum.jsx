@@ -1,11 +1,11 @@
 import css from "../personnel/personnel.module.css"
 
-export const PersonnelNum = (props) => {
+export const PersonnelNum = ({num, text}) => {
     return (
         <div className={css.personnelBlock}>
-                <p className={css.personnelNum}>{props.num}</p>
+                <p className={css.personnelNum}>{num}</p>
                 <div className={css.personnelLine}></div>
-                <p className={css.personnelText}>{props.text}</p>
+                <p className={css.personnelText}>{text}</p>
         </div>
     )
 }

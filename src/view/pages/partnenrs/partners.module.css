@@ -1,0 +1,12 @@
+.partners {
+    margin-top: 60px;
+}
+.title {
+    font-size: 24px;
+}
+.partnersItems {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

@@ -1,6 +1,5 @@
 .personal {
   display: flex;
-  align-items: top;
   grid-gap: 20px;
   padding: 66px 0;
 }
@@ -52,6 +51,10 @@
   margin-left: 140px;
   margin-bottom: 26px;
 }
+.linkLogout {
+  color: #810101;
+  cursor: pointer;
+}
 .specialization p {
   line-height: 22px;
   color: #292929;
@@ -66,7 +69,6 @@
   background: none;
   display: flex;
   grid-gap: 10px;
-  margin: 30px auto;
   margin-bottom: -80px;
 }
 
@@ -100,5 +102,10 @@
   .specialization,
   .line {
     display: none;
+  }
+}
+@media (max-width: 365px) {
+  .personal {
+    flex-direction: column;
   }
 }

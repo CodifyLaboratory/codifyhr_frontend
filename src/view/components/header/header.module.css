@@ -42,6 +42,10 @@ nav {
   background: #2d51a3;
   border-radius: 10px;
 }
+.burger:hover > .burgerLine{
+  background: #042062;
+  transition: all .3s ease;
+}
 .logoImg {
   padding: 10px;
   background: rgb(134, 133, 133);
@@ -78,6 +82,10 @@ nav {
 .userItem {
   display: flex;
   grid-gap: 20px;
+}
+.signInBtn {
+  color: #2d51a3;
+  background: transparent;
 }
 .textLanguage {
   font-size: 16px;
@@ -137,6 +145,7 @@ nav {
 }
 .userTexts {
   display: flex;
+  align-items: center;
 }
 .icons {
   gap: 20px;
@@ -190,6 +199,9 @@ nav {
   .navItem {
     padding: 7px 15px;
     font-size: 13px;
+  }
+  .textLanguage {
+    display: none;
   }
 }
 @media screen and (max-width: 540px) {

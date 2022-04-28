@@ -4,7 +4,7 @@ import Loupe from "../../../assets/loupe.png";
 import { useHistory } from "react-router-dom";
 import API from "../../../api/API";
 
-export const SearchMain = (props) => {
+export const SearchMain = ({modal, setModal, isAuth}) => {
   const [category, setCategory] = useState([]);
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(true);
@@ -25,7 +25,7 @@ export const SearchMain = (props) => {
   const submit = (e) => {
     e.preventDefault();
     if (value) {
-      history.push("/resume/");
+      history.push(isAuth ? "/resume/" : "");
     } else {
       history.push("/");
     }
@@ -65,7 +65,7 @@ export const SearchMain = (props) => {
                 })
               : null}
           </ul>
-          <button >найти</button>
+          <button onClick={() => isAuth ? null : setModal(!modal)}>найти</button>
         </form>
       </div>
     </div>

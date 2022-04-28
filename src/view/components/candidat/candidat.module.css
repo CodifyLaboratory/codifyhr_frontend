@@ -54,6 +54,7 @@
     line-height: 19px;
     color: #292929;
     margin-right: 40px;
+    width: 250px;
 }
 .profession {
     font-size: 16px;
@@ -92,14 +93,18 @@
         line-height: 11px;
         padding: 13px 23px;
     }
-    .profession{
-        font-size: 13px;
-        line-height: 16px;
+    .aboutUserText {
+        flex-direction: column;
     }
     .name{
         font-size: 15px;
         line-height: 18px;
         letter-spacing: 0.02em;
+        width: auto;
+    }
+    .profession{
+        font-size: 13px;
+        line-height: 16px;
     }
     .info div img {
         width: 100%;
@@ -122,6 +127,9 @@
         line-height: 11px;
         padding: 11px 21px;
     }
+    .aboutUserText {
+        flex-direction: column;
+    }
     .profession{
         font-size: 10px;
         line-height: 16px;
@@ -130,6 +138,7 @@
         font-size: 12px;
         line-height: 18px;
         letter-spacing: 0.02em;
+        width: auto;
     }
     .info div img {
         width: 50px;

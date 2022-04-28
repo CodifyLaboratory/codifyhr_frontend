@@ -1,6 +1,7 @@
 .bgSearch {
-  background-image: url(../../../assets/searchMain2.png);
+  background-image: url(../../../assets/searchMain3.jpg);
   background-repeat: no-repeat;
+  background-position: center;
   max-width: 1440px;
   width: 100%;
   padding: 260px 0;
@@ -147,11 +148,12 @@
 
 @media screen and (max-width: 540px) {
   .bgSearch {
-    background-image: url(../../../assets/phoneBg.png);
+    background-image: url(../../../assets/searchMain3.jpg);
     padding: 164px 10px;
     max-width: 540px;
     width: 100%;
     min-height: 630px;
+    background-position: center;
   }
 
   .searchTitleText {

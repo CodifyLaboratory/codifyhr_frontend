@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   grid-gap: 20px;
+  position: relative;
 }
 .contentH1 {
   font-weight: 600;
@@ -60,6 +61,17 @@
   font-size: 18px;
   line-height: 28px;
   color: #ffffff;
+}
+.modalFalse img {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 20px;
+  cursor: pointer;
+}
+.modalTextAuth {
+  color: #ff0000;
+  text-decoration: underline;
 }
 .errorText {
   color: #ff0000;

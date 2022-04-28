@@ -25,11 +25,13 @@
   line-height: 19px;
   color: #000;
   transition: all 0.3s ease;
+
 }
-.selectBlock option {
+.selectBlock > option {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #000;
-  background: #fff;
+  color: #ffffff;
+  background: #2D51A3;
+  border: none;
 }

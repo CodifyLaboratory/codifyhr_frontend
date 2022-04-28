@@ -8,24 +8,24 @@ import Linkedin from "../../../assets/linkedin.png"
 export const Networks = () => {
     return (
         <div className={css.networks}>
-            <div className={css.networksIcon}>
+            <a href="https://www.facebook.com/groups/codifylab/?source_id=1312010315635047" target="_blank" rel="noreferrer" className={css.networksIcon}>
                 <img src={Facebook} alt="" />
-            </div>
-            <div className={css.networksIcon}>
+            </a>
+            <a href="https://www.instagram.com/codifylab.kg/" target="_blank" rel="noreferrer" className={css.networksIcon}>
                 <img src={Instagram} alt="" />
-            </div>
-            <div className={css.networksIcon}>
+            </a>
+            <a href="https://www.youtube.com/channel/UCcnOc_ZLd1FtJufrfW1iSWw?view_as=subscriber" target="_blank" rel="noreferrer" className={css.networksIcon}>
                 <img src={YouTube} alt="" />
-            </div>
-            <div className={css.networksIcon}>
+            </a>
+            <a href="https://t.me/codifynews" target="_blank" rel="noreferrer" className={css.networksIcon}>
                 <img src={Telegram} alt="" />
-            </div>
-            <div className={css.networksIcon}>
+            </a>
+            <a href="" target="_blank" rel="noreferrer" className={css.networksIcon}>
                 <img src={Whatsapp} alt="" />
-            </div>
-            <div className={css.networksIcon}>
+            </a>
+            <a href="" target="_blank" rel="noreferrer" className={css.networksIcon}>
                 <img src={Linkedin} alt="" />
-            </div>
+            </a>
         </div>
     )
 }

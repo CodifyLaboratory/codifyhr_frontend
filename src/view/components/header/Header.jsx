@@ -9,16 +9,17 @@ import { ModalAuth } from "../modalAuth/ModalAuth";
 
 export const Header = (props) => {
   const [burger, setBurger] = useState(false);
-  const activeBurger = () => setBurger((p) => !p);
+  const activeBurger = () => setBurger(!burger);
 
   return (
     <div className={css.header}>
-      {props.authUser === false ? <ModalAuth
+      {props.modal ? <ModalAuth
           authUser={props.authUser}
           isAuth={props.isAuth}
           setIsAuth={props.setIsAuth}
           setModal={props.setModal}
-      /> : <></> }
+          modal={props.modal}
+      /> : <></>}
 
       <nav className="container">
         <div className={css.logo}>
@@ -88,8 +89,9 @@ export const Header = (props) => {
           </Link>
         </div>
         <ul className={css.navList}>
-          <Link className={css.link} to="/resume">
+          <Link className={css.link} to={props.isAuth ? "/resume" : "/"}>
             <button
+                onClick={() => props.isAuth ? null : props.setModal(!props.modal)}
               className={`${css.navItem} ${css.blackLink}`}
             >
               Спиcок резюме
@@ -105,7 +107,7 @@ export const Header = (props) => {
         <div className={css.userItem}>
           <div className={css.userTexts}>
             {props.isAuth === null ? (
-              <></>
+              <button onClick={() => props.setModal(!props.modal)} className={css.signInBtn}>Войти</button>
             ) : (
               <div className={css.icons}>
                 <Link className={css.link} to="/marker-list">

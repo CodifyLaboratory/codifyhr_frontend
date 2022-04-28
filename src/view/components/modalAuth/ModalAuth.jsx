@@ -2,6 +2,7 @@ import { useState } from "react";
 import API from "../../../api/API";
 import css from "./modalAuth.module.css";
 import { useHistory } from "react-router-dom";
+import closeImg from "../../../assets/closeBlackImg.png"
 
 export const ModalAuth = (props) => {
   const [error, setError] = useState("");
@@ -18,7 +19,7 @@ export const ModalAuth = (props) => {
     API.createUser(user)
       .then((res) => {
         props.authUser(res.data.access)
-        if (res.status === 200) {
+        if(res.status === 200) {
           props.setModal(false);
           history.push("/personal/");
         }
@@ -37,6 +38,8 @@ export const ModalAuth = (props) => {
     <div className="modal active">
       <div className={css.content} onClick={(e) => e.stopPropagation()}>
         <h1 className={css.contentH1}>Вход</h1>
+          {props.isAuth ?
+              <p></p> : <p className={css.modalTextAuth}>Войдите в аккаунт</p>}
         <div className={css.line}></div>
         <form onSubmit={submit} className={css.form}>
           <input
@@ -69,6 +72,7 @@ export const ModalAuth = (props) => {
           <p className={css.forgotLink}>Забыли пароль?</p>
           <button>ВОЙТИ</button>
         </form>
+          <div onClick={() => props.setModal(!props.modal)} className={css.modalFalse}><img src={closeImg}/></div>
       </div>
     </div>
   );

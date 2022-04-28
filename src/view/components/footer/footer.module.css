@@ -69,6 +69,9 @@
     color: #292929;
     margin-bottom: 14px;
 }
+.linkBlock > .contacts{
+    margin-top: 20px;
+}
 .link {
     font-weight: 400;
     font-size: 18px;
@@ -141,9 +144,12 @@
 
 }
 /* map  size*/
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 631px) {
     .mapBlock {
         margin-bottom: 45px;
+    }
+    .footerLinks {
+        flex-direction: column;
     }
 }
 @media screen and (max-width: 628px) {

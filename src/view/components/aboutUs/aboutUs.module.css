@@ -47,6 +47,9 @@
     text-transform: uppercase;
     color: #FFFFFF;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn:hover {
     background-color: #3c65c5;

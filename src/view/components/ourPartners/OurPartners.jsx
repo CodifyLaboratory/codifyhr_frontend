@@ -20,7 +20,7 @@ export const OurPartners = () => {
     }, [])
     return (
         <div className="container">
-            <p id="ourPartners" className={css.title}>Компании, в которых работают наши студенты</p>
+            <p id="ourPartners" className={css.title}>Наши партнеры</p>
                 <div className={css.cards}>
                     <div className={css.cardsItem}>
                         {

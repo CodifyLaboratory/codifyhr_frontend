@@ -2,33 +2,39 @@ import { useState, useEffect } from "react";
 import css from "./userResume.module.css";
 import { Info } from "../../components/info/Info";
 import { useParams } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import API from "../../../api/API";
 import PhotoUser from "../../../assets/ava_personal.jpg";
 import CodifyLogo from "../../../assets/logo.png";
 import Save from "../../../assets/save.png";
 import Saved from "../../../assets/saved.png";
 import jsPDF from "jspdf";
-// import { setItemInMarker } from "../../../redux/reducers/reducer"
 
 export const UserResume = () => {
   const [select, setSelect] = useState();
   const [pending, setPending] = useState(true);
   const [resume, setResume] = useState([]);
+  const [username, setUsername] = useState([]);
+  const [surname, setSurname] = useState([]);
   const params = useParams();
 
   useEffect(() => {
     API.getResume(params.id)
       .finally(() => setPending(false))
-      .then((data) => {
-        setResume(data.data);
+      .then((res) => {
+        setResume(res.data);
       });
   }, []);
 
-  const createWish = (e) => {
-    // dispatch(setItemInMarker(resume))
+
+  const createWish = () => {
     API.createWishlist(params.id)
-  };
+  }
+  const deleteWish = () => {
+    API.deleteWishlist(resume.id)
+  }
+
+
+
 
   if (pending) {
     return <div></div>;
@@ -52,7 +58,7 @@ export const UserResume = () => {
     doc.text(160, 160, resume.phone_number ? resume.phone_number : "");
     doc.text(160, 180, resume.email ? resume.email : "");
     doc.comment(160, 200, resume.comment ? resume.comment : "");
-    doc.save(`${resume.first_name} ${resume.last_name}`);
+    doc.save(`${resume.first_name} ${resume.surname}`);
   };
 
   return (
@@ -72,17 +78,17 @@ export const UserResume = () => {
                   <img
                     className={css.saveImg}
                     src={Save}
-                    alt="selecet"
+                    alt="select"
                     onClick={() => setSelect(!select)}
                   />
                 </div>
               )}
               {select && (
-                <div>
+                <div onClick={deleteWish}>
                   <img
                     className={css.saveImg}
                     src={Saved}
-                    alt="seleceted"
+                    alt="selected"
                     onClick={() => setSelect(!select)}
                   />
                 </div>
