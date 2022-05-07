@@ -2,16 +2,14 @@ import { useState, useEffect } from "react";
 import css from "./marker.module.css";
 import API from "../../../api/API";
 import { Candidat } from "../../components/candidat/Candidat";
-import axios from "axios";
-import resumes from "../../../redux/reducers/resumes";
 
 const Marker = () => {
+
   const [wishes, setWishes] = useState([]);
   const [pending, setPending] = useState(true);
   useEffect(() => {
     API.getWishlist()
     .then((res) => {
-      console.log(res);
       setPending(false)
       setWishes(res.data);
     });

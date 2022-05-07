@@ -7,6 +7,7 @@ import Left from "../../../assets/left_arrow_personal.svg";
 import Right from "../../../assets/right_arrow_personal.svg";
 import API from "../../../api/API";
 import {Candidat} from "../../components/candidat/Candidat";
+// import SimpleSlider from "../../components/slider/Slider";
 
 export const Personal = () => {
     const [user, setUser] = useState([])
@@ -26,6 +27,10 @@ export const Personal = () => {
 
     if (pending) return <div></div>
 
+    const clearLocalStorage = () => {
+        localStorage.clear()
+    }
+
     return (
         <div className="container">
             <div key={user.id} className={css.personal}>
@@ -43,7 +48,7 @@ export const Personal = () => {
                         <img src={Email} alt=""/>
                         <p>{user.email ? user.email : `"Нет информации"`}</p>
                     </div>
-                    <p className={css.linkLogout}>Выйти из аккаунта</p>
+                    <a href="/" onClick={clearLocalStorage} className={css.linkLogout}>Выйти из аккаунта</a>
                 </div>
             </div>
             <div className={css.resumes_list}>
@@ -65,11 +70,12 @@ export const Personal = () => {
                         <p>Специализация</p>
                     </div>
                 </div>
-                <div className={css.resumes}>
-                    {resumes.map((item) => (
-                        <Candidat key={item.id} item={item}/>
-                    ))}
+                <div>
+                    {
+                        resumes.map((item) => <Candidat item={item} />)
+                    }
                 </div>
+                {/*<SimpleSlider />*/}
                 {/* <button className={css.more_btn}>Смотреть еще <p><img src={Down} alt="" /></p></button> */}
             </div>
         </div>

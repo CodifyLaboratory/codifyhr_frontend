@@ -78,6 +78,9 @@
     height: 96px;
     cursor: pointer;
 }
+.noPartners {
+    color: #810101;
+}
 @media screen and (max-width: 1200px) {
     .cards {
         justify-content: space-between;

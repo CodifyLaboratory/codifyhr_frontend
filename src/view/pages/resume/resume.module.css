@@ -35,3 +35,18 @@
   background: #2D51A3;
   border: none;
 }
+.noResume {
+  padding: 20px 0;
+  text-align: center;
+  color: #810101;
+}
+
+@media (max-width: 820px) {
+  .selectBlock {
+    padding: 6px 16px;
+  }
+  .selectOption {
+    font-size: 12px !important;
+    border-radius: 50%;
+  }
+}

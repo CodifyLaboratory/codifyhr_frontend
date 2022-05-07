@@ -1,16 +1,16 @@
-import {useEffect, useState} from "react";
+import React from "react";
 import css from "./resume.module.css";
 import {Select} from "../../components/select/Select";
 import {Candidat} from "../../components/candidat/Candidat";
 import API from "../../../api/API";
 
 export const Resume = () => {
-    const [pending, setPending] = useState(true);
-    const [resumes, setResumes] = useState([]);
-    const [category, setCategory] = useState([]);
-    const [filtered, setFiltered] = useState(resumes);
+    const [pending, setPending] = React.useState(true);
+    const [resumes, setResumes] = React.useState([]);
+    const [category, setCategory] = React.useState([]);
+    const [filtered, setFiltered] = React.useState(resumes);
 
-    useEffect(() => {
+    React.useEffect(() => {
         setFiltered(resumes)
     }, [resumes])
 
@@ -23,14 +23,15 @@ export const Resume = () => {
         }
     }
 
-    useEffect(() => {
-        API.getResumes().then((res) => {
+    React.useEffect(() => {
+        API.getResumes()
+            .then((res) => {
             setPending(false);
             setResumes(res.data);
         });
     }, []);
 
-    useEffect(() => {
+    React.useEffect(() => {
         API.getCategories()
             .then((res) => {
                 setCategory(res.data)
@@ -45,9 +46,15 @@ export const Resume = () => {
                 <Select category={category} filteredResumes={filteredResumes}/>
             </div>
             <div className={css.itemsResume}>
-                {filtered.map((item) => (
-                    <Candidat key={item.id} item={item}/>
-                ))}
+                {
+                    filtered.length ?
+                        filtered.map((item) => (
+                            <Candidat key={item.id} item={item}/>
+                        ))
+                        :
+                        <p className={css.noResume}>Нет резюме студентов</p>
+                }
+
             </div>
         </div>
     );

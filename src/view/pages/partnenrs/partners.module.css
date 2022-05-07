@@ -10,3 +10,8 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+.noPartners {
+    padding: 20px 0;
+    text-align: center;
+    color: #810101;
+}

@@ -1,5 +1,5 @@
 import "./index.css";
-import {useState} from "react";
+import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {Personal} from "./view/pages/personal/Personal";
 import {Header} from "./view/components/header/Header";
@@ -13,9 +13,9 @@ import {Partners} from "./view/pages/partnenrs/Partners";
 
 function App() {
 
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] =React.useState(false);
 
-    const [isAuth, setIsAuth] = useState(() =>
+    const [isAuth, setIsAuth] = React.useState(() =>
         JSON.parse(localStorage.getItem("user"))
     );
 
@@ -30,7 +30,7 @@ function App() {
                 <Switch>
                     <PrivateRoute
                         exact
-                        path="/user-resume/:id"
+                        path="/user/:id"
                         user={isAuth}
                         Component={UserResume}
                     />

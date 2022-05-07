@@ -32,7 +32,7 @@ export default {
     getResume: (id) => API.get("resumes/" + id),
     getUser: () => API.get("user/"),
     getWishlist: () => API.get("wishlist/"),
-    createWishlist: (id, data) => API.post("wishlist/create/" + id, data),
-    deleteWishlist: (id) => API.post("wishlist/delete/" + id),
+    createWishlist: (id, data) => API.post("wishlist/create/" + id + "/", data),
+    deleteWishlist: (id) => API.delete("wishlist/delete/" + id + "/"),
     getCategories: () => API.get("categories/")
 };

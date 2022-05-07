@@ -8,7 +8,7 @@ import {Networks} from "../networks/Networks";
 import {Link as ScrollLink} from "react-scroll"
 import {Link} from "react-router-dom";
 
-export const Footer = ({modal, setModal, isAuth}) => {
+export const Footer = ({isAuth}) => {
     return (
         <div className={css.footer}>
             <div className="container">

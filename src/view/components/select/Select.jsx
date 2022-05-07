@@ -6,10 +6,18 @@ export const Select = ({category, filteredResumes}) => {
         <div className={css.selectItem}>
             Сортировать по
             <select className={css.selectBlock} value={category.name} onChange={(e) => filteredResumes(e.target.value)}>
-                <option value="all" onClick={(e) => filteredResumes(e.target.value)}>Все</option>
                 {
-                    category.map((item) => <option key={item.id} value={item.name} onClick={(e) => filteredResumes(e.target.value)}>{item.name}</option>)
+                    category.length ?
+                        <>
+                            <option className={css.selectOption} value="all" onClick={(e) => filteredResumes(e.target.value)}>Все</option>
+                            {
+                                category.map((item) => <option className={css.selectOption} key={item.id} value={item.name} onClick={(e) => filteredResumes(e.target.value)}>{item.name}</option>)
+                            }
+                        </>
+                        :
+                        <option>Нет специальностей</option>
                 }
+
             </select>
         </div>
     );
