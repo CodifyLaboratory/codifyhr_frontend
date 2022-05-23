@@ -3,7 +3,6 @@ import Ava from "../../../assets/ava_personal.jpg";
 import {Link} from "react-router-dom";
 
 export const Candidat = (props) => {
-
     return (
         <div>
             <div className={css.info}>

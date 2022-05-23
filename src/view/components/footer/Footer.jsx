@@ -2,15 +2,12 @@ import css from "./footer.module.css";
 import Logo from "../../../assets/logo.png";
 import certificateImg from "../../../assets/certificateImg.png";
 import SimpleMap from "../map/Map";
-import facebookIcon from "../../../assets/facebookIcon.png";
-import instIcon from "../../../assets/instIcon.png";
 import {Networks} from "../networks/Networks";
 import {Link as ScrollLink} from "react-scroll"
 import {Link} from "react-router-dom";
 
 export const Footer = ({isAuth}) => {
-    return (
-        <div className={css.footer}>
+    return (<div className={css.footer}>
             <div className="container">
                 <div className={css.footerLinks}>
                     <div className={css.logoBloc}>
@@ -39,12 +36,10 @@ export const Footer = ({isAuth}) => {
                             семинары</ScrollLink>
                         <Link to="/partners" className={css.link}>Наши
                             партнеры</Link>
-                        {
-                            isAuth ? <>
-                                <Link to="/resume" className={css.link}>Резюме студентов</Link>
-                                <Link to="/personal" className={css.link}>Личный кабинет </Link>
-                            </> : null
-                        }
+                        {isAuth ? <>
+                            <Link to="/resume" className={css.link}>Резюме студентов</Link>
+                            <Link to="/personal" className={css.link}>Личный кабинет </Link>
+                        </> : null}
 
                         <a href="tel:+996709699079" className={css.link}>Получить консультацию </a>
                     </div>
@@ -72,14 +67,7 @@ export const Footer = ({isAuth}) => {
                 </div>
                 <div className={css.rightText}>
                     <p className={css.footerLanguage}>Русский (RU)</p>
-                    <div className={css.linkIcon}>
-                        <img src={facebookIcon} alt=""/>
-                    </div>
-                    <div className={css.linkIcon}>
-                        <img src={instIcon} alt=""/>
-                    </div>
                 </div>
             </div>
-        </div>
-    );
+        </div>);
 };

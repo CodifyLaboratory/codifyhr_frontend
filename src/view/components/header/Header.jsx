@@ -3,7 +3,7 @@ import css from "./header.module.css";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/logo.png";
 import close from "../../../assets/close.png";
-import userIcon from "../../../assets/userIcon.png";
+import admin from "../../../assets/admin.png";
 import saveIcon from "../../../assets/save2.png";
 import { ModalAuth } from "../modalAuth/ModalAuth";
 
@@ -13,17 +13,21 @@ export const Header = (props) => {
 
   return (
     <div className={css.header}>
-      {props.modal ? <ModalAuth
+      {props.modal ? (
+        <ModalAuth
           authUser={props.authUser}
           isAuth={props.isAuth}
           setIsAuth={props.setIsAuth}
           setModal={props.setModal}
           modal={props.modal}
-      /> : <></>}
+        />
+      ) : (
+        <></>
+      )}
 
-      <nav className="container">
+      <nav className={`container ${css.nav}`}>
         <div className={css.logo}>
-          <div onClick={activeBurger} className={css.burger}>
+          <div onClick={activeBurger} className={burger ? `${css.close}` : `${css.burger}`}>
             <div className={css.burgerLine}></div>
             <div className={css.burgerLine}></div>
             <div className={css.burgerLine}></div>
@@ -33,16 +37,6 @@ export const Header = (props) => {
               burger ? css[`burgerOpen`] : {}
             }`}
           >
-            <div onClick={activeBurger} className={css.close}>
-              <img src={close} alt="img" />
-            </div>
-            <Link onClick={activeBurger} className={`${css.link} `} to={"/"}>
-              <img
-                className={`${css.logoIcon} ${css.logoIconSize}`}
-                src={Logo}
-                alt=""
-              />
-            </Link>
             {props.isAuth === null ? (
               <></>
             ) : (
@@ -84,14 +78,16 @@ export const Header = (props) => {
               </a>
             </div>
           </div>
-          <Link className={css.link} to={"/"}>
+          <Link className={`${css.link} ${css.logoIcon}`} to={"/"}>
             <img className={css.logoIcon} src={Logo} alt="" />
           </Link>
         </div>
         <ul className={css.navList}>
           <Link className={css.link} to={props.isAuth ? "/resume" : "/"}>
             <button
-                onClick={() => props.isAuth ? null : props.setModal(!props.modal)}
+              onClick={() =>
+                props.isAuth ? null : props.setModal(!props.modal)
+              }
               className={`${css.navItem} ${css.blackLink}`}
             >
               Спиcок резюме
@@ -107,7 +103,12 @@ export const Header = (props) => {
         <div className={css.userItem}>
           <div className={css.userTexts}>
             {props.isAuth === null ? (
-              <button onClick={() => props.setModal(!props.modal)} className={css.signInBtn}>Войти</button>
+              <button
+                onClick={() => props.setModal(!props.modal)}
+                className={css.signInBtn}
+              >
+                Войти
+              </button>
             ) : (
               <div className={css.icons}>
                 <Link className={css.link} to="/marker-list">
@@ -119,7 +120,7 @@ export const Header = (props) => {
                 </Link>
                 <Link className={css.link} to="/personal">
                   <p className={css.userText}>Личный кабинет</p>
-                  <img className={css.userIcon} src={userIcon} alt="" />
+                  <img className={css.userIcon} src={admin} alt="" />
                 </Link>
               </div>
             )}

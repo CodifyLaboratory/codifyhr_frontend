@@ -3,6 +3,7 @@ import css from "./resume.module.css";
 import {Select} from "../../components/select/Select";
 import {Candidat} from "../../components/candidat/Candidat";
 import API from "../../../api/API";
+import { Pending } from "../../components/pending/Pending";
 
 export const Resume = () => {
     const [pending, setPending] = React.useState(true);
@@ -38,7 +39,7 @@ export const Resume = () => {
             })
     }, []);
 
-    if (pending) return <div></div>
+    if (pending) return <div><Pending/></div>
 
     return (
         <div className="container">
@@ -52,7 +53,7 @@ export const Resume = () => {
                             <Candidat key={item.id} item={item}/>
                         ))
                         :
-                        <p className={css.noResume}>Нет резюме студентов</p>
+                        <p className="noDesc">Нет резюме студентов</p>
                 }
 
             </div>

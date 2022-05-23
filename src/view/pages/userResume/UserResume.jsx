@@ -8,32 +8,42 @@ import CodifyLogo from "../../../assets/logo.png";
 import Save from "../../../assets/save.png";
 import Saved from "../../../assets/saved.png";
 import jsPDF from "jspdf";
+import { Pending } from "../../components/pending/Pending";
 
 export const UserResume = () => {
+
     const [select, setSelect] = React.useState(false);
     const [pending, setPending] = React.useState(true);
     const [resume, setResume] = React.useState([]);
+    const [wishes, setWishes] = React.useState([]);
+    const [category, setCategory] = React.useState("");
     const params = useParams();
+
     React.useEffect(() => {
         API.getResume(params.id)
             .finally(() => setPending(false))
             .then((res) => {
                 setResume(res.data);
+                setCategory(res.data.category)
+            });
+        API.getWishlist()
+            .then((res) => {
+                setPending(false)
+                setWishes(res.data);
             });
     }, []);
 
 
     const createWish = () => {
         API.createWishlist(params.id)
-        setSelect(true)
-    }
+    };
+
     const deleteWish = () => {
         API.deleteWishlist(params.id)
-        setSelect(false)
     }
 
     if (pending) {
-        return <div></div>;
+        return <div><Pending/></div>;
     }
 
     const download = () => {
@@ -71,19 +81,20 @@ export const UserResume = () => {
                                 Основная информация
                             </p>
                             {select ?
-                                    <img
-                                        className={css.saveImg}
-                                        src={Saved}
-                                        alt="selected"
-                                        onClick={deleteWish}
-                                    />
+                                <img
+                                    className={css.saveImg}
+                                    src={Save}
+                                    alt="select"
+                                    onClick={deleteWish}
+
+                                />
                                 :
-                                    <img
-                                        className={css.saveImg}
-                                        src={Save}
-                                        alt="select"
-                                        onClick={createWish}
-                                    />
+                                <img
+                                    className={css.saveImg}
+                                    src={Saved}
+                                    alt="selected"
+                                    onClick={deleteWish}
+                                />
                             }
                         </div>
                         <Info titleText="Имя" data={resume.first_name}/>

@@ -15,7 +15,7 @@
   text-decoration: none;
 }
 
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,10 +42,7 @@ nav {
   background: #2d51a3;
   border-radius: 10px;
 }
-.burger:hover > .burgerLine{
-  background: #042062;
-  transition: all .3s ease;
-}
+
 .logoImg {
   padding: 10px;
   background: rgb(134, 133, 133);
@@ -69,7 +66,7 @@ nav {
   background: #2d51a3;
   color: #fff;
   text-transform: uppercase;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 .blackLink:hover {
   background-color: #3c65c5;
@@ -114,34 +111,44 @@ nav {
 
 .burgerContent {
   position: fixed;
-  top: 0;
-  left: -10000%;
+  top: -10000%;
+  left: 0;
   background-color: #2d51a3;
   backdrop-filter: blur(8px);
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 40px 20px;
+  padding: 20px 0;
   z-index: 2;
 }
 .burgerOpen {
   overflow: hidden;
-  transition: 0.3s ease left;
-  left: 0;
+  transition: 0.3s ease top;
+  top: 55px;
 }
-.close {
+.burgerCloseLine {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
+  width: 24px;
+  height: 3px;
+  right: 15px;
+  top: 25px;
   transition: all 0.3s ease;
   cursor: pointer;
+  background-color: #fff;
+  transform: rotate(135deg);
 }
-.close > img {
-  width: 100%;
-  height: 100%;
+.close > .burgerLine {
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.close > .burgerLine:nth-child(1) {
+  transform: rotate(45deg);
+}
+.close > .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+.close > .burgerLine:nth-child(3) {
+  transform: translateY(-4px) rotate(-45deg);
 }
 .userTexts {
   display: flex;
@@ -150,11 +157,12 @@ nav {
 .icons {
   gap: 20px;
   display: flex;
+  align-items: center;
 }
 .userIcon {
   display: none;
-  width: 16px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 .userIconMarker {
   display: flex;
@@ -162,14 +170,12 @@ nav {
 /* ******************************************* */
 
 @media screen and (max-width: 1140px) {
-
   .userText {
     display: none;
   }
   .userIcon {
     display: flex;
   }
-
 }
 @media screen and (max-width: 1024px) {
   .logoIcon {
@@ -181,6 +187,9 @@ nav {
   .navItem {
     padding: 9px 19px;
     font-size: 15px;
+  }
+  .navList {
+    grid-gap: 20px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -208,8 +217,20 @@ nav {
   .header {
     padding: 8px 0;
   }
+  .signInBtn {
+    margin-left: 20px;
+  }
   .burger {
     display: flex;
+  }
+  .logo {
+    grid-gap: 0;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row-reverse;
+  }
+  .icons {
+    gap: 0;
   }
   .navItem {
     padding: 9px 13px;
@@ -225,6 +246,10 @@ nav {
   .navList {
     display: none;
   }
+  .userIcon {
+    grid-gap: 0;
+    display: none;
+  }
   .logoIconSize {
     content: url(../../../assets/logoWhite.png);
     width: 214px;
@@ -234,19 +259,29 @@ nav {
     top: 6px;
   }
   .burgerLinks {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
     background-color: transparent;
     border: none;
   }
   .burgerLink {
     display: flex;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 22px;
     color: #fff;
     padding: 0;
+    text-transform: inherit;
+    margin-bottom: 10px;
+  }
+  .blueLink {
+    margin-bottom: 0;
+    border: 1px solid #f9fbff;
+    padding: 4px 20px;
+    transition: all 0.3s ease;
+  }
+  .blueLink:hover {
+    border: 1px solid #3c65c5;
   }
   .burgerLink:hover {
     text-decoration: underline;

@@ -2,6 +2,7 @@ import css from "./partners.module.css"
 import {useEffect, useState} from "react";
 import API from "../../../api/API";
 import {OurPartnersCard} from "../../components/ourPartnersCard/OurPartnersCard";
+import { Pending } from "../../components/pending/Pending";
 
 export const Partners = () => {
     const [partners, setPartners] = useState([])
@@ -15,7 +16,7 @@ export const Partners = () => {
             })
     }, [])
 
-    if (pending) return <div></div>
+    if (pending) return <div><Pending/></div>
 
     return (
         <div className={`${css.partners} ${"container"}`}>

@@ -19,14 +19,17 @@ export const OurPartners = () => {
                 setPartners(res.data)
             })
     }, [])
+
+    const newFiltredPartners = partners.slice(0, 4)
+    
     return (
         <div className="container">
-            <p id="ourPartners" className={css.title}>Наши партнеры</p>
+            <p id="ourPartners" className={css.title}>Компании, в которых работают наши студенты</p>
             <div className={css.cards}>
                 {
                     partners.length ?
                         <div className={css.cardsItem}>
-                            {partners.map((item) => <OurPartnersCard key={item.id} item={item}/>)}
+                            {newFiltredPartners.map((item) => <OurPartnersCard key={item.id} item={item}/>)}
                         </div>
                         :
                         <div className={css.noPartners}>Нет партнеров</div>

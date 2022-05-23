@@ -33,6 +33,6 @@ export default {
     getUser: () => API.get("user/"),
     getWishlist: () => API.get("wishlist/"),
     createWishlist: (id, data) => API.post("wishlist/create/" + id + "/", data),
-    deleteWishlist: (id) => API.delete("wishlist/delete/" + id + "/"),
+    deleteWishlist: (id, data) => API.delete("wishlist/delete/" + id + "/", data),
     getCategories: () => API.get("categories/")
 };

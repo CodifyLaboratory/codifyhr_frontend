@@ -98,6 +98,7 @@
     margin-left: 120px;
   }
 }
+
 @media screen and (max-width: 540px) {
   .profilePhoto > img {
     width: 60px;

@@ -70,10 +70,23 @@ button {
   opacity: 1;
   pointer-events: all;
 }
+
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+}
+
+.noDesc {
+  padding: 20px 0;
+  text-align: center;
+  color: #810101;
+}
 @media screen and (max-width: 1024px) {
-    .container {
+  .container {
       padding: 0 20px;
-    }
+  }
 }
 @media screen and (max-width: 480px) {
     .container {
